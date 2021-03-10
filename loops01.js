@@ -4,7 +4,7 @@ Write a program that will iterate from 0 to 10 and display squares of numbers.
 for (var i = 0; i <= 10; i++) {
     console.log(i * i);
 }
-console.log( "First task");
+console.log("First task");
 
 /*
 1. Write a for loop that will iterate from 0 to 15. For each iteration, it will check if the current
@@ -12,7 +12,7 @@ number is odd or even, and display a message to the screen.
 */
 
 var evenArr = [];
-var  oddArr = [];
+var oddArr = [];
 for (var i = 0; i <= 15; i++) {
     if (i % 2 === 0) {
         evenArr[evenArr.length] = i;
@@ -20,7 +20,7 @@ for (var i = 0; i <= 15; i++) {
         oddArr[oddArr.length] = i;
     }
 }
-console.log(evenArr, oddArr);
+console.log("Even: " + evenArr, "Odd:" + oddArr);
 console.log("Second task");
 
 /*
@@ -41,9 +41,9 @@ console.log("Thrid task");
 
 var array = [1, 2, 3, 4, 5, 6],
     s = 0,
-    p = 1,
-    i;
-for (i = 0; i < array.length; i += 1) {
+    p = 1;
+
+for (var i = 0; i < array.length; i++) {
     s += array[i];
     p *= array[i];
 }
@@ -65,7 +65,6 @@ console.log("Fifth task");
 /*
 5. Write a program that prints the elements of the following array.
 var a = [
-
 [1, 2, 1, 24],
 [8, 11, 9, 4],
 [7, 0, 7, 27]
@@ -88,10 +87,12 @@ console.log("Sixth task");
 6. Write a program that outputs the sum of squares of the first 20 numbers.
 */
 var p = 1;
+var sum = 0;
 for (var i = 0; i <= 20; i++) {
-    p = i * i;
+    sum += i * i;
+
 }
-console.log("Squares is: " + p);
+console.log("Sum of Squares is: " + sum);
 
 console.log("Seventh task");
 /*
@@ -105,34 +106,26 @@ var Avgmarks = 0;
 
 for (var i = 0; i < students.length; i++) {
     Avgmarks += students[i][1];
-    var average = (Avgmarks / students.length);
+    var avg = (Avgmarks / students.length);
 }
 
 console.log("Average grade: " + (Avgmarks) / students.length);
 
-switch (average) {
-    case average <= 60:
-        console.log("F");
-        break;
 
-    case average >= 60 && average < 70:
-        console.log("D");
-        break;
-
-    case average >= 70 && average < 80:
-        console.log("C");
-        break;
-
-    case average >= 80 && average < 90:
-        console.log("B");
-        break;
-
-    case average >= 90 && average <= 100:
-        console.log("B");
-        break;
-
-    default:
-        console.log("Invalid average grade");
+if (avg < 60) {
+    console.log("Grade : F");
+}
+else if (avg <= 70) {
+    console.log("Grade : D");
+}
+else if (avg <= 80) {
+    console.log("Grade : C");
+}
+else if (avg <= 90) {
+    console.log("Grade : B");
+}
+else if (avg <= 100) {
+    console.log("Grade : A");
 }
 
 console.log("Eighth task");

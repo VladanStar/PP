@@ -128,7 +128,7 @@ program to print "FizzBuzz";, for numbers that are divisible by both 3 and 5 (an
 "Fizz"; or "Buzz"; for numbers divisible by only one of those).
 */
 // make a loop that goes from 1 to 100
-for (var i = 1; i < 101; i++) {
+for (var i = 1; i <= 100; i++) {
 
     // check if the number is divisible by 3 or 5
     var checkThree = i % 3;

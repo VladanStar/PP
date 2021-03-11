@@ -232,3 +232,5 @@ for (var i = 0; i < a.length + 1; i++) {
     }
 }
 console.log(b);
+// provera
+ console.log("Provera vladan")

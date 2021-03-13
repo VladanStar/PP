@@ -22,16 +22,16 @@ for (var i = 0; i <= 15; i++) {
 }
 console.log("Even: " + evenArr, "Odd:" + oddArr);
 
-// second 
-for (var x=0; x<=15; x++) {
-    if (x === 0) {
-            console.log(x +  " is zero");
+// second way
+for (var i=0; i<=15; i++) {
+    if (i === 0) {
+            console.log(i +  " is zero");
     }
-    else if (x % 2 === 0) {
-            console.log(x + " is even");   
+    else if (i % 2 === 0) {
+            console.log(i + " is even");   
     }
     else {
-            console.log(x + " is odd");
+            console.log(i + " is odd");
     }
 }
 console.log("Second task");
@@ -94,6 +94,29 @@ for (var i in a) {
         console.log(" " + a[i][j]);
     }
 }
+
+
+var b = [];
+for( var i = 0; i < a.length; i++) {
+    for (var j in a[i]) {
+        b[b.length]= a[i][j];
+    }
+}
+console.log("b =["+ b +"]");
+
+
+/* 
+var a = [4, 6, 2, 8, 2, 2];
+var e = 2;
+var b = [];
+for( var i = 0; i < a.length; i++) {
+    if (a[i] !== e) {
+        b[b.length]= a[i];
+    }
+}
+console.log(b);
+*/
+
 
 console.log("Sixth task");
 /*

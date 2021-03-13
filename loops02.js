@@ -55,21 +55,20 @@ for (var i = 1; i < arr3.length; i++) {
 }
 console.log("min element is: " + minValue + ", index =" + num);
 
-console.log(a);
+
 // Druga verzija
 var a = [-4, 2, 2, -1, 6, -5, 58, 6, -12, 8];
 var min = 0;
 var index = 0;
 
-for (var i = 0, j = 1; i < a.length - 1; i++ , j++) {
+for (var i = 0;i < a.length; i++) {
     if (min > a[i] ) {
         min = a[i]
         index = i;
     }
-  
 }
-console.log(min);
-console.log(index);
+console.log("Min = "+min);
+console.log("index = "+index);
 console.log("Cevrti zadatak");
 
 /* 
@@ -87,9 +86,12 @@ for (var i = 1; i < arr4.length; i++) {
 }
 
 console.log("min element is: " + minValue1);
+
 var numb = arr4.sort();
+
 var next = numb[1];
 console.log("Next larger element is: " + next);
+
 var str = [4, 2, 2, -1, 6];
 var n = str.length;
 
@@ -132,7 +134,7 @@ Output: The array is symmetric.
 var nums = [2, 4, -2, 7, -2, 4, 2];
 
 for (var i = 0; i < nums.length / 2; i++) {
-    if (nums[i] !== nums[nums.length - i - 1]) {
+    if (nums[i] !== nums[nums.length - i -1]) {
         result = "The array is  not symmetric.";
         break;
     }
@@ -150,7 +152,8 @@ console.log("Sedmi zadatak");
 
 Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
 Output array: [4, 3, 5, 8, 6, 11, 2, 9]
-*/var a = [4, 5, 6, 2];
+*/
+var a = [4, 5, 6, 2];
 var b = [3, 8, 11, 9];
 var c = [];
 

@@ -21,13 +21,26 @@ for (var i = 0; i <= 15; i++) {
     }
 }
 console.log("Even: " + evenArr, "Odd:" + oddArr);
+
+// second 
+for (var x=0; x<=15; x++) {
+    if (x === 0) {
+            console.log(x +  " is even");
+    }
+    else if (x % 2 === 0) {
+            console.log(x + " is even");   
+    }
+    else {
+            console.log(x + " is odd");
+    }
+}
 console.log("Second task");
 
 /*
 2. Write a program to sum the multiples of 3 and 5 under 1000.
 */
 var sum = 0;
-for (var i = 0; i <= 1000; i++) {
+for (var i = 0; i < 1000; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
         sum += i;
     }

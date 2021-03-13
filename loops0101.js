@@ -95,7 +95,7 @@ for (var i in a) {
     }
 }
 
-
+// second way
 var b = [];
 for( var i = 0; i < a.length; i++) {
     for (var j in a[i]) {
@@ -103,19 +103,6 @@ for( var i = 0; i < a.length; i++) {
     }
 }
 console.log("b =["+ b +"]");
-
-
-/* 
-var a = [4, 6, 2, 8, 2, 2];
-var e = 2;
-var b = [];
-for( var i = 0; i < a.length; i++) {
-    if (a[i] !== e) {
-        b[b.length]= a[i];
-    }
-}
-console.log(b);
-*/
 
 
 console.log("Sixth task");
@@ -189,6 +176,30 @@ for (var i = 1; i <= 100; i++) {
 
     // if the number is divisible by 5, then print Buzz
     else if (checkFive == 0)
+        console.log("Buzz");
+
+    // otherwise just print the number
+    else
+        console.log(i);
+}
+
+//
+for (var i = 1; i <= 100; i++) {
+
+    // check if the number is divisible by 3 or 5
+    var checkThree = i % 3;
+    var checkFive = i % 5;
+
+    // if the number is divisible by both 3 and 5, then print FizzBuzz
+    if ((checkThree == 0) && (checkFive == 0))
+        console.log("FizzBuzz");
+
+    // if the number is divisible by 3, then print Fizz
+    else if (checkThree == 0 && checkFive !== 0)
+        console.log("Fizz");
+
+    // if the number is divisible by 5, then print Buzz
+    else if (checkFive == 0 && checkThree !==0)
         console.log("Buzz");
 
     // otherwise just print the number

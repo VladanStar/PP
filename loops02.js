@@ -13,7 +13,7 @@ var a = [5, -4.2, 8, 7];
 for (var i = 0; i < a.length; i++) {
     if (a[i] === e) {
         result = "yes";
-        break;
+       break; // for first element e
     }
     else {
         result = "no";

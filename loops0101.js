@@ -25,7 +25,7 @@ console.log("Even: " + evenArr, "Odd:" + oddArr);
 // second 
 for (var x=0; x<=15; x++) {
     if (x === 0) {
-            console.log(x +  " is even");
+            console.log(x +  " is zero");
     }
     else if (x % 2 === 0) {
             console.log(x + " is even");   

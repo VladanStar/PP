@@ -171,20 +171,19 @@ console.log("Osmi zadatak");
 Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
 Output array: [4, 5, 6, 2, 3, 8, 11, 9]
 */
-var arr1 = [4,5,6,2],
-    arr2 = [3,8,11,9],
-    newArr = [],
-    index = 0;
+c1 = [4, 5, 6, 2];
+c2 = [3, 8, 11, 9];
+c3 = [];
 
-for (i=0; i<arr1.length; i++) {
-    newArr[index] = arr1[i];
-    index++;
-    newArr[index] = arr2[i];
-    index++;
+for (var i = 0; i < c1.length; i++) {                  
+    c3[i] = c1[i]; 
 }
 
-console.log(newArr);
-  
+for (var j = 0; j < c2.length; j++) {         
+    c3[c1.length + j] = c2[j];
+}
+
+console.log(c3);
 
 
 console.log("Deveti zadatak");

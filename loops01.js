@@ -166,21 +166,22 @@ console.log("Osmi zadatak");
 Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
 Output array: [4, 5, 6, 2, 3, 8, 11, 9]
 */
-var arr1 = [4, 5, 6, 2],
-    arr2 = [3, 8, 11, 9],
-    newArr = [],
-    index = 0;
-
-for (var i = 0; i < arr1.length; i++) {
-    newArr[index] = arr1[i];
-    index++;
-    newArr[index] = arr2[i];
-    index++;
+for (var i = 0; i < 100; i++) {
+    var divThree = i % 3;
+    var divFive = i % 5;
+    if (divThree == 0 && divFive == 0) {
+        console.log("FizzBuzb");
+    }
+    else if (divThree == 0) {
+        console.log("Fizz");
+    }
+    else if (divFive == 0) {
+        console.log("Buzz");
+    }
+    else {
+        console.log(i);
+    }
 }
-
-
-console.log(newArr);
-console.log(arr1 + "," + arr2);
 
 console.log("Deveti zadatak");
 /* 

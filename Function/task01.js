@@ -163,26 +163,71 @@ is 5 the program should draw:
 * *
 *****
 */
-var n = 5;
-var pr = "\n";
 
-function print(n) {
+var number = 5;
 
-    for (var i = 1; i <= n; i++) {
-        for (var j = 1; j <= n; j++) {
-            if (i === 1 || i === n ||
-                j === 1 || j ===n) {
-               console.log( pr += "*\t");
-            }
-            else {
-              console.log(  pr += " \n");
-            }
-        }
-        //console.log(" \n");
-    }
-    
+function drawSquare(size) {
+  
+  var starBlank = "";
+  var star = "*";
+  var space = " ";
+
+  for (var i = 1; i <= size; i++) {
+      if (i === 1 || i === size) {
+          var warStar = "";
+          for (var j = 1; j <= size; j++) {
+              warStar += star;
+          }
+          console.log(warStar);
+
+      } else {
+          var space2 = "";
+          for (var z = 1; z <= size-2; z++) {
+              space2 +=space;
+          }
+          star2 = star + space2 + star;
+          console.log(star2);
+      }
+  }
 }
-var prints = print(n);
-console.log(prints);
+drawSquare(number);
 
+/*6. Write a program that draws a horizontal chart representing three given values. For
+example, if values are 5, 3, and 7, the program should draw:
+* * * * *
+* * *
+* * * * * * *
+*/
+var val1 = 5;
+var val2 = 3;
+var val3 = 7;
 
+function drawStars(a, b, c) {
+     var line1="";
+     var line2="";
+     var line3="";
+     var star1 = "";
+     var star2 = "";
+     var star3 = "";
+     var asteriks = "* ";
+     var star = "*";
+    for (i = 1; i <= a-1; i++) {
+        star1 += asteriks;
+    }
+    line1 = star1 + star;
+    console.log(line1);
+
+    for (j = 1; j <= b-1; j++) {
+        star2 += asteriks;
+    }
+    line2 = star2 + star;
+    console.log(line2);
+
+    for (z = 1; z <= c-1; z++) {
+        star3 += asteriks;
+    }
+    line3 = star3 + star;
+    console.log(line3);
+}
+
+drawStars(val1, val2, val3);

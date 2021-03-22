@@ -22,7 +22,7 @@ a = 6;
 
 function evenOrOdd(a) {
     if (a === 0) {
-        return "Zero. Please enter a number";
+        return "Zero. Pleaase enter a number";
     }
     else if (a % 2 === 0) {
         return "Even"

@@ -271,8 +271,6 @@ function humanizeNumber(num) {
     return num + "th";
 }
 
-console.log(humanizeNumber());
-console.log(humanizeNumber(1128));
-console.log(humanizeNumber(8));
+
 console.log(humanizeNumber(301));
 console.log(humanizeNumber(402));

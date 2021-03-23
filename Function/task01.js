@@ -209,7 +209,7 @@ function drawStars(a, b, c) {
      var star1 = "";
      var star2 = "";
      var star3 = "";
-     var asteriks = "* ";
+     var asteriks = "* " ;
      var star = "*";
     for (i = 1; i <= a-1; i++) {
         star1 += asteriks;
@@ -231,3 +231,35 @@ function drawStars(a, b, c) {
 }
 
 drawStars(val1, val2, val3);
+//-----------------------------------------------------
+function makeSquare(n) {
+	var result = '';
+	var space = ' ';
+	var star = '*';
+	var newLine = '\n';
+	for (var i = 0; i < n; i++) {
+		for (var j = 0; j < n; j++) {
+			if (i === 0 || i === n-1 || j === 0 || j === n-1) {
+				result += star;
+			} else {
+				result += space;
+			}
+		}
+		result += newLine;
+	}
+	return result;
+}
+//-------------------------------------------------------
+
+//Write a program that draws a horizontal chart representing three given values. For example, if values are 5, 3, and 7, the program should draw:
+function makeChart() {
+	var result = '';
+	for (var i = 0; i < arguments.length; i++) {
+		for (var j = 0; j < arguments[i]; j++) {
+			result += '*';
+		} 
+		result += '\n';
+	}
+	return result;
+}
+console.log(makeChart(6,7,8,9))

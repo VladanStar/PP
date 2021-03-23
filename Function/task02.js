@@ -19,9 +19,14 @@ console.log(isString(b));
 false -> false
 */
 function isBlank(a) {
-    return typeof a === " ";
+    if(a === " ") {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
-var c = "   ";
+var c = "  ";
 console.log(isBlank(c));
 
 /* 

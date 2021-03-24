@@ -19,7 +19,7 @@ console.log(isString(b));
 false -> false
 */
 function isBlank(a) {
-    if(a === " ") {
+    if (a === " ") {
         return true;
     }
     else {
@@ -138,7 +138,7 @@ function stringToArray(str) {
     return newArr;
 }
 
-var s= "My random string";
+var s = "My random string";
 console.log(stringToArray(s));
 
 /* 
@@ -211,7 +211,19 @@ function converts(arr) {
 }
 var arR = ["1", "21", undefined, "42", "1e+3", Infinity];
 console.log(converts(arR));
+//--------------------------------------------------------------------------
+function convertsString(array) {
+    var array_1 = [];
+    for (var i = 0; i < array.length; i++) {
+        if (typeof array[i] !== "undefined" && array[i] !== Infinity) {
+            array_1[array_1.length] = array[i];
 
+        }
+    }
+    return array_1;
+}
+var array = ["1", "21", undefined, "42", "1e+3", Infinity];
+console.log(convertsString(array));
 /* 
 12. Write a function to calculate how many years there are left until retirement based on the
 year of birth. Retirement for men is at age of 65 and for women at age of 60. If someone is

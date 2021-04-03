@@ -41,6 +41,28 @@ function countVowels(str) {
   return count;
 }
 console.log(countVowels("vlAdan cupric vezba programiranje"));
+
+// second simple way
+function countVowels(string) {
+    var result = 0;
+    for (var i = 0; i < string.length; i++) {
+        switch (string[i]) {
+            case "a":
+            case "A":
+            case "e":
+            case "E":
+            case "i":
+            case "I":
+            case "o":
+            case "O":
+            case "u":
+            case "U":
+                result++;
+        }
+    }
+    return result;
+}
+console.log(countVowels("AEaenalek"));
 /* 2. 
 Write a function that combines two arrays by alternatingly taking elements.
 [‘a’,’b’,’c’], [1,2,3] -> [‘a’,1,’b’,2,’c’,3]

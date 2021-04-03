@@ -223,8 +223,10 @@ function frequency(arr) {
 var a = [8, 4, 1, 2, 7, 5, 1, 1, 1, 2, 5];
 console.log(frequency(a));
 
-/* 12.
-Write a function to find and return the first, middle and last element of an array if the array has odd number of elements. If number of elements is even, return just the first and the last. In other cases, input array should be returned.
+/* 11.
+Write a function to find and return the first, middle and last element
+of an array if the array has odd number of elements. If number of elements is even,
+ return just the first and the last. In other cases, input array should be returned.
  */
 
 var firstLast = function (a) {
@@ -238,6 +240,39 @@ var firstLast = function (a) {
 };
 
 console.log(firstLast([1, 2, 3, 4, 5, 6]));
+//second way
+var a = [2, 1, -4, 3, "a", "vd", 3, -1, 4];
+
+var firstMiddleLast = function (n) {
+  var b = [];
+  if (n.length % 2 == 0) {
+    b[0] = n[0];
+    b[1] = n[n.length - 1];
+  } else {
+    b[0] = n[0];
+    b[1] = n[parseInt(n.length / 2)];
+    b[2] = n[n.length - 1];
+  }
+
+  return b;
+};
+
+console.log(firstMiddleLast(a));
+/*12.  
+Write a function to find the average of N elements.Make the function flexible to receive dynamic number or parameters. */
+
+var avgOfNElements = function () {
+  var sum = 0;
+  var avg;
+  for (var i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  avg = sum / arguments.length;
+  return avg;
+};
+
+console.log(avgOfNElements(45, 5, 10, 1, 4));
+
 /* 13.
  Write a function to find all the numbers greater than the average.
 */
@@ -290,3 +325,43 @@ var bmi = function (w, h) {
   return result;
 };
 bmi(86, 1.93);
+/*
+15.
+ Write a function that takes a list of strings and prints them, one per line, in a rectangular frame.:
+For example the list["Hello", "World", "in", "a", "frame"] gets printed as:
+* Hello *
+* World *
+* in    *
+* a     *
+* frame *
+********* */
+
+var list = ["Hello", "World", "in", "a", "frame"];
+
+var rectFrame = function (l) {
+  a = "";
+  k = 0;
+  max = l[0].length;
+  for (var i = 1; i < l.length; i++) {
+    if (l[i].lenght > max) {
+      max = l[i].length;
+    }
+  }
+  for (var i = 0; i < l.length; i++) {
+    for (var j = 0; j <= max + 1; j++) {
+      if (j == 0 || j == max + 1) {
+        a += " * ";
+      } else if (typeof l[i][k] == "undefined") {
+        a += " ";
+      } else {
+        a += l[i][k];
+        k++;
+      }
+    }
+    a += "\n";
+    k = 0;
+  }
+  return a;
+};
+
+console.log(rectFrame(list));

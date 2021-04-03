@@ -177,6 +177,28 @@ console.log(findMaxMin(arr));
 /* 9.
 Write a function to find the median element of array
 */
+function calcMedian(array) {
+  const { length } = array;
+
+  if (length < 1) return 0;
+
+  //sort array asc
+  array.sort((a, b) => a - b);
+
+  if (length % 2) {
+    //length of array is odd
+    return array[(length + 1) / 2 - 1];
+  } else {
+    //length of array is even
+    return 0.5 * [array[length / 2 - 1] + array[length / 2]];
+  }
+}
+
+console.log(calcMedian([1, 2, 2, 5, 6]));
+console.log(calcMedian([1, 2, 2, 5, 6, 7]));
+console.log(calcMedian([13, 9, 8, 15, 7]));
+console.log(calcMedian([1, 4, 6, 3]));
+console.log(calcMedian([5, 1, 11, 2, 8]));
 
 /*10.
 Write a function to find the element that occurs most frequently.
@@ -200,3 +222,71 @@ function frequency(arr) {
 }
 var a = [8, 4, 1, 2, 7, 5, 1, 1, 1, 2, 5];
 console.log(frequency(a));
+
+/* 12.
+Write a function to find and return the first, middle and last element of an array if the array has odd number of elements. If number of elements is even, return just the first and the last. In other cases, input array should be returned.
+ */
+
+var firstLast = function (a) {
+  var medianIndex = 0;
+  if (a.length % 2 == 1) {
+    medianIndex = (a.length - 1) / 2;
+    return a[0] + " " + a[a.length - 1] + " " + a[medianIndex];
+  } else {
+    return a[0] + " " + a[a.length - 1];
+  }
+};
+
+console.log(firstLast([1, 2, 3, 4, 5, 6]));
+/* 13.
+ Write a function to find all the numbers greater than the average.
+*/
+function greaterNumber(array) {
+  var arr = [];
+
+  var sum = 0;
+
+  var a;
+  var average;
+  for (var i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  average = sum / array.length;
+
+  for (var j = 0; j < array.length; j++) {
+    if (array[j] > average) arr[arr.length] = array[j];
+  }
+  return arr;
+}
+var a = [8, 4, 1, 2, 7, 5, 1, 1, 1, 2, 5];
+console.log(greaterNumber(a));
+/* 14.
+The body mass index (BMI) is the ratio of the weight of a person (in kilograms) to the square of the height (in meters). Write a function that takes two parameters, weight and height, computes the BMI, and prints the corresponding BMI category:
+Starvation: less than 15
+Anorexic: less than 17.5
+Underweight: less than 18.5
+Ideal: greater than or equal to 18.5 but less than 25
+Overweight: greater than or equal to 25 but less than 30
+Obese: greater than or equal to 30 but less than 40
+Morbidly obese: greater than or equal to 40 */
+var bmi = function (w, h) {
+  result = w / (h * h);
+
+  if (result < 15) {
+    console.log("Starvation");
+  } else if (result < 17.5 && result > 15) {
+    console.log("Anorexic");
+  } else if (result > 17.5 && result < 18.5) {
+    console.log("Underweight");
+  } else if (result > 18.5 && result < 25) {
+    console.log("Ideal");
+  } else if (result > 25 && result < 30) {
+    console.log("Overweight");
+  } else if (result > 30 && result < 40) {
+    console.log("Obese");
+  } else if (result > 40) {
+    console.log("Morbidly");
+  }
+  return result;
+};
+bmi(86, 1.93);

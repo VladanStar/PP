@@ -110,31 +110,27 @@ function multiplTable(n) {
 var n = 12;
 console.log(multiplTable(n));
 // simple funnctions
-function table(x)
-{
-  
-  var alertBody = '';
-  for (var i=1; i<x; i++) {
-    alertBody += x + "*" + i +"="+x*i + '\n';
+function table(x) {
+  var alertBody = "";
+  for (var i = 1; i < x; i++) {
+    alertBody += x + "*" + i + "=" + x * i + "\n";
   }
   return alertBody;
 }
 var n = 12;
 console.log(table(n));
 // third way
-function mulT(n){
-for ( var i=1; i<=n; ++i)
-{
-    for (var j = 1; j<=n; ++j)
-    {
-       console.log(i*j+"  ");  
+function mulT(n) {
+  for (var i = 1; i <= n; ++i) {
+    for (var j = 1; j <= n; ++j) {
+      console.log(i * j + "  ");
     }
-    console.log()
-}   
+    console.log();
+  }
 }
 var n = 12;
 console.log(mulT(n));
- 
+
 /* 6.
 Write a function to input temperature in Centigrade and convert to Fahrenheit.
 */
@@ -162,19 +158,19 @@ console.log(findMax(array));
 /* 8. 
 Write a function to find the maximum and minimum elements. Function returns an array.
 */
-function findMaxMin(array){
-    var newArr =[];
-    var max = array[0];
-    var min = array[0];
-    for(var i =0; i<array.length;i++){
-        if(array[i]>max && typeof array[i]==="number"){
-            newArr [0]= array[i];
-        }
-        if(array[i] <min && typeof array[i] ==="number"){
-            newArr[1] = array[i];
-        }
+function findMaxMin(array) {
+  var newArr = [];
+  var max = array[0];
+  var min = array[0];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] > max && typeof array[i] === "number") {
+      newArr[0] = array[i];
     }
-    return newArr;
+    if (array[i] < min && typeof array[i] === "number") {
+      newArr[1] = array[i];
+    }
+  }
+  return newArr;
 }
 var arr = [2, 5, "65", "7", 8, 12, -4, 5, 45];
 console.log(findMaxMin(arr));
@@ -185,23 +181,22 @@ Write a function to find the median element of array
 /*10.
 Write a function to find the element that occurs most frequently.
 */
-function frequency(arr){
-    var mostF = arr[0];
-    var occurs =0;
-    for(var i =0; i<arr.length;i++){
-        var counter =0;
-    for(var j =0; j<arr.length;j++){
-        if(arr[i] ===arr[j]){
-            counter++;
-        }
+function frequency(arr) {
+  var mostF = arr[0];
+  var occurs = 0;
+  for (var i = 0; i < arr.length; i++) {
+    var counter = 0;
+    for (var j = 0; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        counter++;
+      }
     }
-    if(occurs < counter){
-        mostF = arr[i];
-        occurs =counter;
+    if (occurs < counter) {
+      mostF = arr[i];
+      occurs = counter;
     }
-    }
-    return mostF;
+  }
+  return mostF;
 }
-var a = [8,4,1,2,7,5,1,1,1,2,5];
+var a = [8, 4, 1, 2, 7, 5, 1, 1, 1, 2, 5];
 console.log(frequency(a));
-

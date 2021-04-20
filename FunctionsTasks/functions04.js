@@ -2,14 +2,11 @@
 1.	Write a program that checks if a given element e is in the array a.
 Input:  e = 3, a = [5, -4.2, 3, 7]
 Output: yes
-
 Input:  e = 3, a = [5, -4.2, 18, 7]
 Output: no
-
 */
 function isInArray(someArray, someElement) {
     var output = "";
-
     for (var i = 0; i < someArray.length; i++) {
         if (someArray[i] === someElement) {
             output = "yes";
@@ -17,10 +14,8 @@ function isInArray(someArray, someElement) {
         }
         output = "no";
     }
-
     return output;
 }
-
 var a = [5, -4.2, 3, 7];
 var e = 3;
 
@@ -59,7 +54,6 @@ function minOfArray(someArray) {
         }
     }
     output = min + "," + index;
-
     return output;
 }
 a = [4, 2, 2, -1, 6];

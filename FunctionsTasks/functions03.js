@@ -239,7 +239,6 @@ function findFrequent(someArray) {
             if (someArray[i] == someArray[j]) {
                 counter++;
             }
-
             if (mostFrequent < counter) {
                 mostFrequent = counter;
                 frequentEl = someArray[i];

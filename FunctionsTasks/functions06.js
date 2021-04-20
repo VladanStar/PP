@@ -44,23 +44,23 @@ console.log(countVowels("vlAdan cupric vezba programiranje"));
 
 // second simple way
 function countVowels(string) {
-    var result = 0;
-    for (var i = 0; i < string.length; i++) {
-        switch (string[i]) {
-            case "a":
-            case "A":
-            case "e":
-            case "E":
-            case "i":
-            case "I":
-            case "o":
-            case "O":
-            case "u":
-            case "U":
-                result++;
-        }
+  var result = 0;
+  for (var i = 0; i < string.length; i++) {
+    switch (string[i]) {
+      case "a":
+      case "A":
+      case "e":
+      case "E":
+      case "i":
+      case "I":
+      case "o":
+      case "O":
+      case "u":
+      case "U":
+        result++;
     }
-    return result;
+  }
+  return result;
 }
 console.log(countVowels("AEaenalek"));
 /* 2. 
@@ -263,20 +263,22 @@ var firstLast = function (a) {
 
 console.log(firstLast([1, 2, 3, 4, 5, 6]));
 //second way
-var a = [2, 1, -4, 3, "a", "vd", 3, -1, 4];
+var a = [];
 
 var firstMiddleLast = function (n) {
   var b = [];
-  if (n.length % 2 == 0) {
-    b[0] = n[0];
-    b[1] = n[n.length - 1];
-  } else {
-    b[0] = n[0];
-    b[1] = n[parseInt(n.length / 2)];
-    b[2] = n[n.length - 1];
+  if (n.lenght === 1 && n.lenght === 0) {
+    if (n.length % 2 == 0) {
+      b[0] = n[0];
+      b[1] = n[n.length - 1];
+    } else {
+      b[0] = n[0];
+      b[1] = n[parseInt(n.length / 2)];
+      b[2] = n[n.length - 1];
+    }
+    return b;
   }
-
-  return b;
+  return n;
 };
 
 console.log(firstMiddleLast(a));
@@ -286,23 +288,25 @@ Write a function to find the average of N elements.Make the function flexible to
 var avgOfNElements = function () {
   var sum = 0;
   var avg;
+  var count=0;
   for (var i = 0; i < arguments.length; i++) {
-    sum += arguments[i];
+    var converted = parseFloat(arguments[i]);
+    if(isFinite(converted))
+    count++;
+    sum += converted;
   }
-  avg = sum / arguments.length;
+  avg = sum / count;
   return avg;
 };
 
-console.log(avgOfNElements(45, 5, 10, 1, 4));
+console.log(avgOfNElements(45, 5,10, "3",1, 4));
 
 /* 13.
  Write a function to find all the numbers greater than the average.
 */
 function greaterNumber(array) {
   var arr = [];
-
   var sum = 0;
-
   var a;
   var average;
   for (var i = 0; i < array.length; i++) {
@@ -311,14 +315,16 @@ function greaterNumber(array) {
   average = sum / array.length;
 
   for (var j = 0; j < array.length; j++) {
-    if (array[j] > average) arr[arr.length] = array[j];
+    if (array[j] > average) 
+    arr[arr.length] = array[j];
   }
   return arr;
 }
 var a = [8, 4, 1, 2, 7, 5, 1, 1, 1, 2, 5];
 console.log(greaterNumber(a));
 /* 14.
-The body mass index (BMI) is the ratio of the weight of a person (in kilograms) to the square of the height (in meters). Write a function that takes two parameters, weight and height, computes the BMI, and prints the corresponding BMI category:
+The body mass index (BMI) is the ratio of the weight of a person (in kilograms) to the square of the height (in meters). 
+Write a function that takes two parameters, weight and height, computes the BMI, and prints the corresponding BMI category:
 Starvation: less than 15
 Anorexic: less than 17.5
 Underweight: less than 18.5
@@ -346,7 +352,7 @@ var bmi = function (w, h) {
   }
   return result;
 };
-bmi(86, 1.93);
+bmi(89, 1.83);
 /*
 15.
  Write a function that takes a list of strings and prints them, one per line, in a rectangular frame.:
@@ -385,5 +391,29 @@ var rectFrame = function (l) {
   }
   return a;
 };
-
 console.log(rectFrame(list));
+
+//second way best way
+function helloWord (array) {
+
+  var result = ''; 
+  var star = '*';
+  var newLine = '\n';
+  var space = ' ';
+
+  for (var i = -1; i <= array.length; i++) {
+      for (var j = -2; j <= array.length +1; j++) {
+          if (i === -1 || i === array.length || j === -2 || j === array.length +1) {
+              result += star;
+          } else if (j >= 0 && j < array[i].length) {
+              result += array[i][j];
+          } else {
+              result += space;
+          }
+      }
+      result += newLine;
+  }
+  return result;
+}
+
+console.log(helloWord(["Hello", "World", "in", "a", "frame"]));

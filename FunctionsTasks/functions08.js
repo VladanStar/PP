@@ -5,7 +5,7 @@ elements.
 Input array: [4, 5, 11, 9]
 Output array: [ 9, 5, 11, 4]
 */
-"use strict";
+"use strict"
 
 var a = (function (numbers) {
   var newArray = [];
@@ -28,7 +28,7 @@ console.log(a);
 Input: 4 5
 Output: 20
  */
-("use strict");
+"use strict"
 
 var rectangleSurface = (function (a, b) {
   return a * b;
@@ -41,7 +41,7 @@ number of replacements.
 Input: prograMming
 Output: progra**ing, 2* 3.
 */
-("use strict");
+"use strict"
 
 var replaceLetter = (function (word) {
   var counter = 0;
@@ -61,13 +61,13 @@ var replaceLetter = (function (word) {
 
 console.log(replaceLetter);
 /* 
-4.
+
  4. Write a function with parameters name and surname that returns a function that
 suggests an email in the form name.surname@gmail.com.
 Input: pera peric
 Output: pera.peric@gmail.com
 */
-("use strict");
+"use strict"
 
 var emailSuggestion = (function (name, surname) {
   function newEmail(newName, newSurname) {
@@ -98,7 +98,7 @@ Output: Your password is invalid!
 Input: JSGuru123
 Output: Your password is cool!
 */
-("use strict");
+"use strict"
 
 var validPassword = function () {
   var output = "Your password is cool!";
@@ -128,7 +128,7 @@ var checkPassword = function (password, successCallback, errorCallback) {
 given by the callback function.
 Input: [2, 8, 11, 4, 9, 3], callback function checks if the number is odd
 Output: [11, 9, 3] */
-("use strict");
+"use strict"
 
 function isOdd(number) {
   if (number % 2 !== 0) {

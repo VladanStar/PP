@@ -110,7 +110,7 @@ var invalidPassword = function () {
   return output;
 };
 
-var checkPassword = function (password, successCallback, errorCallback) {
+var checkPassword = (function (password, successCallback, errorCallback) {
   var isValid = true;
   for (var i = 0; i < password.length; i++) {
     if (typeof password[i] !== "number" && password.length < 6) {
@@ -123,8 +123,8 @@ var checkPassword = function (password, successCallback, errorCallback) {
   } else {
     return errorCallback();
   }
-};
-console.log(checkPassword(12345678,validPassword,invalidPassword));
+})(12345678,validPassword,invalidPassword);
+console.log(checkPassword);
 /*7. Write a function that filters elements of the given array so that they satisfy a condition
 given by the callback function.
 Input: [2, 8, 11, 4, 9, 3], callback function checks if the number is odd
@@ -138,7 +138,6 @@ function isOdd(number) {
     return false;
   }
 }
-
 var filterElements = (function (someArray, checkIfOdd) {
   var newArray = [];
 

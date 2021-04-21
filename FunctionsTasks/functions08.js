@@ -74,7 +74,7 @@ var emailSuggestion = (function (name, surname) {
     return newName + "." + newSurname + "@gmail.com";
   }
   return newEmail(name, surname);
-})("barbara", "vasic");
+})("vladan", "cupric");
 /* 
 5. Write a function that returns a function that calculates a decimal value of the given octal
 number.
@@ -150,3 +150,22 @@ var filterElements = (function (someArray, checkIfOdd) {
 })([2, 8, 11, 4, 9, 3], isOdd);
 
 console.log(filterElements);
+//------------------------
+"use strict"
+
+var replaceLetter = (function (word) {
+  var counter = 0;
+  var newString = "";
+  var output = "";
+  for (var i = 0; i < word.length; i++) {
+    if (word[i] === "m" || word[i] === "M") {
+      counter++;
+      newString += "*";
+    } else {
+      newString += word[i];
+    }
+  }
+
+  return (output = newString + ", " + counter);
+})("prograMming");
+console.log(replaceLetter);

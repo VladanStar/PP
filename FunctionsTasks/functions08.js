@@ -104,20 +104,22 @@ var validPassword = function () {
   var output = "Your password is cool!";
   return output;
 };
-
 var invalidPassword = function () {
   var output = "Your password is invalid!";
   return output;
 };
+<<<<<<< HEAD
 
 var checkPassword = (function (password, successCallback, errorCallback) {
+=======
+var checkPassword = function (password, successCallback, errorCallback) {
+>>>>>>> masterMain
   var isValid = true;
   for (var i = 0; i < password.length; i++) {
     if (typeof password[i] !== "number" && password.length < 6) {
       isValid = false;
     }
   }
-
   if (isValid) {
     return successCallback();
   } else {
@@ -130,7 +132,10 @@ given by the callback function.
 Input: [2, 8, 11, 4, 9, 3], callback function checks if the number is odd
 Output: [11, 9, 3] */
 "use strict"
+<<<<<<< HEAD
 
+=======
+>>>>>>> masterMain
 function isOdd(number) {
   if (number % 2 !== 0) {
     return true;
@@ -140,7 +145,6 @@ function isOdd(number) {
 }
 var filterElements = (function (someArray, checkIfOdd) {
   var newArray = [];
-
   for (var i = 0; i < someArray.length; i++) {
     if (checkIfOdd(someArray[i])) {
       newArray[newArray.length] = someArray[i];
@@ -148,7 +152,6 @@ var filterElements = (function (someArray, checkIfOdd) {
   }
   return newArray;
 })([2, 8, 11, 4, 9, 3], isOdd);
-
 console.log(filterElements);
 //------------------------
 "use strict"

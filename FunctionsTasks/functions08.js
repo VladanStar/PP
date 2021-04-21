@@ -124,6 +124,7 @@ var checkPassword = function (password, successCallback, errorCallback) {
     return errorCallback();
   }
 };
+console.log(checkPassword(12345678,validPassword,invalidPassword));
 /*7. Write a function that filters elements of the given array so that they satisfy a condition
 given by the callback function.
 Input: [2, 8, 11, 4, 9, 3], callback function checks if the number is odd

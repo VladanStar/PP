@@ -108,12 +108,9 @@ var invalidPassword = function () {
   var output = "Your password is invalid!";
   return output;
 };
-<<<<<<< HEAD
 
 var checkPassword = (function (password, successCallback, errorCallback) {
-=======
-var checkPassword = function (password, successCallback, errorCallback) {
->>>>>>> masterMain
+
   var isValid = true;
   for (var i = 0; i < password.length; i++) {
     if (typeof password[i] !== "number" && password.length < 6) {
@@ -125,17 +122,14 @@ var checkPassword = function (password, successCallback, errorCallback) {
   } else {
     return errorCallback();
   }
-})(12345678,validPassword,invalidPassword);
+})(12345678, validPassword, invalidPassword);
 console.log(checkPassword);
 /*7. Write a function that filters elements of the given array so that they satisfy a condition
 given by the callback function.
 Input: [2, 8, 11, 4, 9, 3], callback function checks if the number is odd
 Output: [11, 9, 3] */
 "use strict"
-<<<<<<< HEAD
 
-=======
->>>>>>> masterMain
 function isOdd(number) {
   if (number % 2 !== 0) {
     return true;

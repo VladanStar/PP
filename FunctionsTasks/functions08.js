@@ -74,7 +74,7 @@ var emailSuggestion = (function (name, surname) {
     return newName + "." + newSurname + "@gmail.com";
   }
   return newEmail(name, surname);
-})("barbara", "vasic");
+})("vladan", "cupric");
 /* 
 5. Write a function that returns a function that calculates a decimal value of the given octal
 number.
@@ -98,18 +98,16 @@ Output: Your password is invalid!
 Input: JSGuru123
 Output: Your password is cool!
 */
-("use strict");
+"use strict"
 
 var validPassword = function () {
   var output = "Your password is cool!";
   return output;
 };
-
 var invalidPassword = function () {
   var output = "Your password is invalid!";
   return output;
 };
-
 var checkPassword = function (password, successCallback, errorCallback) {
   var isValid = true;
   for (var i = 0; i < password.length; i++) {
@@ -117,7 +115,6 @@ var checkPassword = function (password, successCallback, errorCallback) {
       isValid = false;
     }
   }
-
   if (isValid) {
     return successCallback();
   } else {
@@ -128,8 +125,7 @@ var checkPassword = function (password, successCallback, errorCallback) {
 given by the callback function.
 Input: [2, 8, 11, 4, 9, 3], callback function checks if the number is odd
 Output: [11, 9, 3] */
-("use strict");
-
+"use strict"
 function isOdd(number) {
   if (number % 2 !== 0) {
     return true;
@@ -137,10 +133,8 @@ function isOdd(number) {
     return false;
   }
 }
-
 var filterElements = (function (someArray, checkIfOdd) {
   var newArray = [];
-
   for (var i = 0; i < someArray.length; i++) {
     if (checkIfOdd(someArray[i])) {
       newArray[newArray.length] = someArray[i];
@@ -148,5 +142,4 @@ var filterElements = (function (someArray, checkIfOdd) {
   }
   return newArray;
 })([2, 8, 11, 4, 9, 3], isOdd);
-
 console.log(filterElements);

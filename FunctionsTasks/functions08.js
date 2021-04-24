@@ -84,7 +84,7 @@ Output: 28
 function octalToDecimal(octalNum) {
   var str = octalNum + "";
 
-  return parseInt(str);
+  return parseFloat(str);
 }
 console.log(octalToDecimal(034));
 
@@ -122,8 +122,32 @@ var checkPassword = (function (password, successCallback, errorCallback) {
   } else {
     return errorCallback();
   }
-})(12345678, validPassword, invalidPassword);
+})("wwwwwwwweeeee", validPassword, invalidPassword);
 console.log(checkPassword);
+
+//-------------------------
+var input = "JSGuruaaaaa";
+
+function check(pass, successCallback, errorCallback) {
+  if (pass.length < 6) {
+    return errorCallback();
+  }
+  for (var i = 0; i < pass.length; i++){
+    if (!isNaN(Number(pass[i]))){
+      return successCallback();
+    }
+  }
+  return errorCallback()
+}
+
+function goodPass() {
+  console.log("Your password is cool!");
+}
+function badPass() {
+  console.log("Your password is invalid!");
+}
+
+check(input, goodPass, badPass);
 /*7. Write a function that filters elements of the given array so that they satisfy a condition
 given by the callback function.
 Input: [2, 8, 11, 4, 9, 3], callback function checks if the number is odd
@@ -166,3 +190,19 @@ var replaceLetter = (function (word) {
   return (output = newString + ", " + counter);
 })("prograMming");
 console.log(replaceLetter);
+//--------------5---
+// Write a function that returns a function that calculates a decimal value of the given octal number.
+// Input: 034
+// Output: 28
+
+function vratiDruguFunkciju(octal) {
+  return function drugaFunkcija() {
+    return Number(octal);
+  };
+}
+
+var dajDecimalni = vratiDruguFunkciju(034);
+
+var rezultat = dajDecimalni();
+
+console.log(rezultat);

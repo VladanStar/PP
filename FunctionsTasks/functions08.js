@@ -6,7 +6,6 @@ Input array: [4, 5, 11, 9]
 Output array: [ 9, 5, 11, 4]
 */
 "use strict"
-
 var a = (function (numbers) {
   var newArray = [];
 
@@ -21,7 +20,6 @@ var a = (function (numbers) {
   }
   return newArray;
 })([4, 5, 11, 9]);
-
 console.log(a);
 /*
 2. Write IIFE that calculates the surface area of the given rectangle with sides a and b.

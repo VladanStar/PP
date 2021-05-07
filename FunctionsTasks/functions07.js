@@ -34,7 +34,7 @@ Call the function three times with different sets of values.
 Bonus: Add an additional argument to the function that takes the conversion rate of human to dog years.
 
 */
-("use strict");
+"use strict"
 
 function calculateDogAge(dogAge = 0, humanYears = 0) {
   if (dogAge <= 0) {
@@ -74,7 +74,7 @@ Call that function three times, passing in different values each time.
 
 Bonus: Accept floating point values for amount per day, and round the result to a round number.
 */
-("use strict");
+"use strict"
 
 function calculateSupply(age, amountPerDay) {
   var maxAge = 80;
@@ -102,7 +102,7 @@ Create a function called fahrenheitToCelsius:
 Now store a fahrenheit temperature into a variable.
 Convert it to celsius and output "NN°F is NN°C."
 */
-("use strict");
+"use strict"
 
 function celsiusToFahrenheit(celsius) {
   var fahrenheit = 0;

@@ -122,3 +122,55 @@ console.log(newRecipe.canBePreparedFor15Min());
 console.log(newRecipe.printIngredients());
 console.log(newRecipe.changeTypeOfCuisine("mexican"));
 console.log(newRecipe.deleteAnIngredient("origano"));
+//----------------------------------------------------------------------
+var culinaryRecipe = function (
+  name,
+  type,
+  complexity,
+  listOfIngredients,
+  preparingTime,
+  instructions
+) {
+  return {
+    name: name,
+    type: type,
+    complexity: complexity,
+    listOfIngredients: listOfIngredients,
+    preparingTime: preparingTime,
+    instructions: instructions,
+    getIngredients: function () {
+      return this.listOfIngredients;
+    },
+    isQuick: function () {
+      if (this.preparingTime < 15) {
+        return "It can be prepared in 15 min!";
+      }
+      return "No, it can not be prepared in 15 minutes.";
+    },
+    changeCuisine: function (cuisine) {
+      return (this.type = cuisine);
+    },
+    removeIngredient: function (ingredient) {
+      var newList = [];
+      for (var i = 0; i < this.listOfIngredients.length; i++) {
+        if (this.listOfIngredients[i] === ingredient) {
+          continue;
+        }
+        newList[newList.length] = this.listOfIngredients[i];
+      }
+      this.listOfIngredients = newList;
+    },
+  };
+};
+
+var pasta = culinaryRecipe(
+  "Carbonara",
+  "It",
+  2,
+  ["eggs", "meat", "salt"],
+  14,
+  "In the culinary"
+);
+pasta.removeIngredient("meat");
+pasta.changeCuisine("srb");
+console.log(pasta);

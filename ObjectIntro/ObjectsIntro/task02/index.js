@@ -82,7 +82,12 @@ function CreateProject(desc, lang, gitUrl, isDev) {
     console.log(this.gitUrl);
   };
   this.isJavaScript = function (lang) {
-    return this.lang === "JavaScript";
+    if (this.lang === "JavaScript") {
+      return "JavaScript";
+    }
+    else {
+      return this.lang;
+    }
   };
   this.isDevelopment = function (isDev) {
     return this.isDev
@@ -90,7 +95,7 @@ function CreateProject(desc, lang, gitUrl, isDev) {
       : "project is not in development";
   };
 }
-var calculator = new CreateProject("calculator", "Java", "http:gitUrl", true);
+var calculator = new CreateProject("calculator", "Payton", "https://github.com/VladanStar/PP.git", true);
 calculator.isDev = false;
 console.log(calculator);
 console.log(calculator.isDevelopment());

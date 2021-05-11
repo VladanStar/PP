@@ -79,13 +79,13 @@ function CreateProject(desc, lang, gitUrl, isDev) {
   this.gitUrl = gitUrl;
   this.isDev = isDev;
   this.printRepo = function (gitUrl) {
-    console.log(gitUrl);
+    console.log(this.gitUrl);
   };
   this.isJavaScript = function (lang) {
-    return lang === "JavaScript";
+    return this.lang === "JavaScript";
   };
   this.isDevelopment = function (isDev) {
-    return isDev
+    return this.isDev
       ? "project is in development"
       : "project is not in development";
   };
@@ -94,3 +94,4 @@ var calculator = new CreateProject("calculator", "Java", "http:gitUrl", true);
 calculator.isDev = false;
 console.log(calculator);
 console.log(calculator.isDevelopment());
+calculator.printRepo();

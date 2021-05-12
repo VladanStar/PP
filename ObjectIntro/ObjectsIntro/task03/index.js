@@ -29,7 +29,7 @@ function FavouriteMovie(
     return suportingActors.push(actor);
   };
   this.removeSuportActor = function (delName) {
-      return suportingActors.splice(suportingActors.findIndex((firstName) => firstName == delName), 1);
+      return suportingActors.splice(suportingActors.findIndex((firstName) => firstName == delName.firstName && lastName == delName.lastName), 1);
      
   };
   this.printSuportActors = function () {

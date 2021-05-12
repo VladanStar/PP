@@ -25,13 +25,13 @@ function FavouriteMovie(
   this.printShortNameMovie = function () {
     return "Name movie: " + this.name + ", director: " + this.director + ", actor: " + this.actor.firstName + " " + this.actor.lastName;
   };
-  this.addSuportActor = function (actor) {
+    this.addSuportActor = function (actor) {
     return suportingActors.push(actor);
   };
   this.removeSuportActor = function (delName) {
      
       for (var i = suportingActors.length - 1; i >= 0; --i) {
-          if (suportingActors[i].lastName == delName.lastName) {
+          if ( suportingActors[i].firstName == delName.firstName && suportingActors[i].lastName == delName.lastName ) {
               suportingActors.splice(i, 1);
           }
       }

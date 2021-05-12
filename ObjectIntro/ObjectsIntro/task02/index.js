@@ -151,7 +151,13 @@ function FavouriteMovie(
   };
   this.changePlot = function (newPlots) {
     return this.plot = newPlots;
-  }
+  };
+  this.addAwards = function (award) {
+    return this.awards.push(award);
+  };
+  this.printAwards = function () {
+    return this.awards;
+  };
 }
 var movie = new FavouriteMovie(
   "The Deer Hunter",
@@ -179,5 +185,6 @@ console.log(movie.printPopularity());
 movie.printPlot();
 movie.addNewPlot("Friendship in war");
 movie.printPlot();
+console.log(movie.printAwards());
 
 

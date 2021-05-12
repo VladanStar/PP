@@ -137,6 +137,9 @@ function FavouriteMovie(
     var indeks = suportingActors.indexOf(ingredient);
     return this.suportingActors.splice(indeks, indeks + 1);
   };
+  this.printSuportActors = function () {
+    return this.suportingActors
+  };
   this.printPopularity = function () {
     return this.popularity;
   };

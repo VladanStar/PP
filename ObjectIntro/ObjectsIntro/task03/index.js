@@ -29,8 +29,12 @@ function FavouriteMovie(
     return suportingActors.push(actor);
   };
   this.removeSuportActor = function (delName) {
-      return suportingActors.splice(suportingActors.findIndex((firstName) => firstName == delName.firstName && lastName == delName.lastName), 1);
      
+      for (var i = suportingActors.length - 1; i >= 0; --i) {
+          if (suportingActors[i].lastName == delName.lastName) {
+              suportingActors.splice(i, 1);
+          }
+      }
   };
   this.printSuportActors = function () {
     return this.suportingActors;

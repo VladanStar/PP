@@ -5,16 +5,16 @@ function Automobil(name, model, weight, color, passenger) {
   this.color = color;
   this.passenger = passenger || 1;
   this.start = function () {
-    console.log("Car is turn on.");
+    return "Car is turn on.";
   };
   this.drive = function () {
-    console.log("Car is  drive.");
+    return "Car is  drive.";
   };
   this.stop = function () {
-    return ("Car  is stoped.");
+    return "Car  is stoped.";
   };
   this.turnOf = function () {
-    console.log("Car is turn of.");
+    return "Car is turn of.";
   };
   this.weightCar = function () {
     return this.weight;
@@ -29,11 +29,12 @@ function Automobil(name, model, weight, color, passenger) {
 }
 var alfaRomeo = new Automobil("Alfa Romeo", "159", 1600, "grey metalic");
 console.log(typeof alfaRomeo);
+console.log(alfaRomeo);
 console.log(alfaRomeo.weightCar());
 console.log(alfaRomeo.start());
 console.log(alfaRomeo.drive());
-alfaRomeo.stop();
+console.log(alfaRomeo.stop());
 alfaRomeo.addPassenger(4);
 console.log(alfaRomeo.printPassenger());
+console.log(alfaRomeo.stop());
 console.log(alfaRomeo.turnOf());
-console.log(alfaRomeo);

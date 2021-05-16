@@ -363,7 +363,7 @@ console.log(
 // 8.Write a function that calculates a number of days to your birthday.
 // Input: 25 February 
 // Output: 5 days
-var bday = new Date ('Apr 05 2018');
+var bday = new Date ('May 15 2021');
 
 var calculate = function(bday) {
     var x =new Date();
@@ -378,9 +378,9 @@ console.log(calculate(bday));
 // 	Input: 8:22:13 11:43:22
 // 	Output: 3 hours 21 minutes 8 seconds
 
-var time1 = Date.parse ('20 Feb 2018 08:22:13');
+var time1 = Date.parse ('16 May 2021 08:22:13');
 
-var time2 = Date.parse ('20 Feb 2018 11:43:22');
+var time2 = Date.parse ('16 May 2021 11:43:22');
 var arrival = function(time1, time2){
     var milisec = time2 - time1;
     var sec = milisec /1000;
@@ -404,7 +404,7 @@ function Points(x,y,z){
 
 var point1 = new Points (3,5,1);
 var point2 = new Points (4,2,8);
-// console.log(point1,point2);
+console.log(point1,point2);
 
 
 

@@ -287,7 +287,7 @@ the functions from a) to d).
 // 7.zadatak a)
 // Write a function that checks if a given string is written in all capitals.
 
-var str = "BRANKA";
+var str = "VLADAN";
 
 var allCapitals = function (s) {
   if (s === s.toUpperCase()) {

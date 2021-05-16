@@ -254,7 +254,10 @@ var mostExpansive = function (list) {
   var price = 0;
   for (var i = 0; i < list.length; i++) {
     price += list[i].price; //problem
-    if (price[i] < list[i].price) price[i] = list[i].price;
+   
+    if (price[i] < list[i].price) {
+      price[i] = list[i].price;
+    }
   }
   return "Expansive = " + price;
 };

@@ -164,3 +164,26 @@ var calculate = function(bday) {
   return d;
 }
 console.log(calculate(bday));
+function expensivePrice(list) {
+  for (var i = 0; i < list.length; i++) {
+    var max1 = list[i].price.max;
+  }
+console.log(max1);
+}
+
+var list = [
+    {
+      name: "apples",
+      price: 100,
+    },
+    {
+      name: "milk",
+      price: 80,
+    },
+    {
+      name: "bananas",
+      price: 150,
+    },
+];
+expensivePrice(list);
+console.log(max1);

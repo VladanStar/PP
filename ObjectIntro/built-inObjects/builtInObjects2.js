@@ -36,7 +36,7 @@ function sortString(string) {
     arrayString.push(lowerString[i]);
   }
   arrayString.sort();
-  return arrayString.join();
+  return arrayString.join();// join() ako se ne navede separator podrazumevani je (,);
 }
 console.log(sortString("Webmaster"));
 

@@ -47,21 +47,20 @@ are sorted from A to Z.
 	
 	"Republic Of Serbia" -> "Rbceilpu Of Sabeir"
 */
+function makeAlphabet(str) {
+   var newString = str.toLowerCase().split(' ');
+   
+   var newString1 = [];
 
-function alphabeticalOrderWords(str) {
-  var arrOfStrings = str.split(" ");
-
-  console.log(arrOfStrings);
-
-  for (var i = 0; i < arrOfStrings.length; i++) {
-    arrOfStrings[i] = alphabeticalOrderWords(arrOfStrings[i]);
-  }
-  console.log(arrOfStrings);
-
-  return arrOfStrings.join(" ");
+   for(var i=0; i<newString.length; i++){
+      newString1[i] = newString[i].split('').sort().join('');
+     
+   }
+   return newString1;
+   
 }
 
-console.log(alphabeticalOrderWords("Republic Of Serbia"));
+console.log(makeAlphabet("Republic Of Serbia"));
 
 /* 5. Write a function to split a string and convert it into an array of words.
     "John Snow" -> [ 'John', 'Snow' ] */

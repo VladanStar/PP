@@ -10,7 +10,7 @@ function Replace(initiate, fromBase, toBase) {
 var res = Replace("ff", 16, 8);
 console.log(res);
 
-/*2.
+/*1.
 Write a JavaScript function that reverses a number. typeof result of the function should be “number”.
 */
 
@@ -27,8 +27,16 @@ function reverse(number) {
 var s = reverse(12345);
 console.log(typeof s);
 console.log(s);
+//-----------second way----
+/* Write a JavaScript function that reverses a number.
+    12345 -> 12345 */
 
-//3.Write a JavaScript function that returns a passed string with letters in alphabetical order.
+var array1 = [1, 2, 3, 4, 5];
+var reversed = array1.reverse();
+
+console.log(reversed);
+
+//2.Write a JavaScript function that returns a passed string with letters in alphabetical order.
 function sortString(string) {
   var lowerString = string.toLowerCase();
   var arrayString = [];
@@ -36,11 +44,19 @@ function sortString(string) {
     arrayString.push(lowerString[i]);
   }
   arrayString.sort();
-  return arrayString.join();// join() ako se ne navede separator podrazumevani je (,);
+  return arrayString.join(); // join() ako se ne navede separator podrazumevani je (,);
 }
 console.log(sortString("Webmaster"));
+/***** */
+function makeAlphabet(str) {
+  var arr = str.toLowerCase().split("");
+  var newString = arr.sort();
+  return newString.join("");
+}
 
-/* 4.
+console.log(makeAlphabet("Webmaster"));
+
+/* 3.
 Write a function to alphabetize words of a given string. 
 Alphabetizing a string means rearranging the letters so they 
 are sorted from A to Z. 
@@ -48,30 +64,26 @@ are sorted from A to Z.
 	"Republic Of Serbia" -> "Rbceilpu Of Sabeir"
 */
 function makeAlphabet(str) {
-   var newString = str.toLowerCase().split(' ');
-   
-   var newString1 = [];
+  var newString = str.toLowerCase().split(" ");
 
-   for(var i=0; i<newString.length; i++){
-      newString1[i] = newString[i].split('').sort().join('');
-     
-   }
-   return newString1;
-   
+  var newString1 = [];
+
+  for (var i = 0; i < newString.length; i++) {
+    newString1[i] = newString[i].split("").sort().join("");
+  }
+  return newString1;
 }
 
 console.log(makeAlphabet("Republic Of Serbia"));
 
-/* 5. Write a function to split a string and convert it into an array of words.
+/* 4. Write a function to split a string and convert it into an array of words.
     "John Snow" -> [ 'John', 'Snow' ] */
 
-function splitWords(n) {
-  var res = n.split(" ");
-  return res;
+function makeAlphabet(str) {
+  var newString = str.split(" ");
+  return newString;
 }
-var name = "John Snow";
-
-console.log(splitWords(name));
+console.log(makeAlphabet("John Snow"));
 
 /* 6. Write a function to convert a string to its abbreviated form.
 "John Snow" -> 	"John S."
@@ -103,6 +115,13 @@ function padString(pad, str, direction) {
 console.log(padString("0000", 123, "l"));
 console.log(padString("00000000", 123, "d"));
 
+/** */
+
+function padding(str, zero) {
+  var strNewLen = zero.length;
+  return str.padStart(strNewLen, "0");
+}
+console.log(padding("123", "00000"));
 /* 8.
 Write a function to capitalize the first letter of a string and returns modified string.
 "js string exercises" -> "Js string exercises" 
@@ -113,6 +132,12 @@ function capitalizeFirstLetter(str) {
 }
 
 console.log(capitalizeFirstLetter("js string exercises"));
+
+///
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+console.log(capitalize("js string exercises"));
 
 /* 9.
   Write a function to hide email addresses to protect them from unauthorized users.
@@ -130,6 +155,18 @@ function protectEmail(inputEmail) {
 }
 
 console.log(protectEmail("pera.zdera@bit.rs"));
+/*
+ */
+
+function protectEmail(email) {
+  var position = email.indexOf("@");
+
+  var newEmail = email.slice(position, position.length);
+
+  return "..." + newEmail;
+}
+
+console.log(protectEmail("nnradovic@gmail.com"));
 
 /* 10.
   Write a program that accepts a string as input and swaps the case of each character. 
@@ -156,3 +193,22 @@ function swapTheCaseOfCharacter(str) {
   return result.join("");
 }
 console.log(swapTheCaseOfCharacter("The Quick Brown Fox"));
+
+/* */
+
+function convert(str) {
+  var newString = str.split("");
+
+  var newString1 = [];
+  var counter = 0;
+  for (var i = 0; i < newString.length; i++) {
+    if (newString[i] === newString[i].toUpperCase()) {
+      newString[i] = newString[i].toLowerCase();
+    } else {
+      newString[i] = newString[i].toUpperCase();
+    }
+  }
+  return newString;
+}
+
+console.log(convert("The Quick Brown Fox"));

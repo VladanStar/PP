@@ -63,18 +63,24 @@ are sorted from A to Z.
 	
 	"Republic Of Serbia" -> "Rbceilpu Of Sabeir"
 */
-function makeAlphabet(str) {
-  var newString = str.toLowerCase().split(" ");
-
+/*
+logika razdvojimo string pomocu split(" "). Novi niz newString1 sluzi da sortiramo 
+i a.join(S)	Vraća string u kome su elementi niza odvojeni separatorom S.I to je za niz
+Sa sledecom for petljom od niza pravimo string koji ima izmedju reci razmak " ".
+*/
+function makeA(str) {
+  var newString = str.split(" ");
   var newString1 = [];
-
+  var newString2 = "";
   for (var i = 0; i < newString.length; i++) {
     newString1[i] = newString[i].split("").sort().join("");
   }
-  return newString1;
+  for (var i = 0; i < newString.length; i++){
+    newString2 += newString1[i] +" ";
+  }
+  return newString2;
 }
-
-console.log(makeAlphabet("Republic Of Serbia"));
+console.log(makeA("Republic Of Serbia"));
 
 /* 4. Write a function to split a string and convert it into an array of words.
     "John Snow" -> [ 'John', 'Snow' ] */
@@ -114,7 +120,6 @@ function padString(pad, str, direction) {
 }
 console.log(padString("0000", 123, "l"));
 console.log(padString("00000000", 123, "d"));
-
 /** */
 
 function padding(str, zero) {
@@ -122,41 +127,47 @@ function padding(str, zero) {
   return str.padStart(strNewLen, "0");
 }
 console.log(padding("123", "00000"));
+console.log(padding("00000000", 123, "d"));
 /* 8.
 Write a function to capitalize the first letter of a string and returns modified string.
 "js string exercises" -> "Js string exercises" 
 */
-
+/*
+charAt() funkcija prvi znak pretvara u veliko slovo i
+ dodaje ostatak nepromenjen od 2 znaka tj prvog indeksa do kraja*/
 function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 console.log(capitalizeFirstLetter("js string exercises"));
 
-///
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-console.log(capitalize("js string exercises"));
-
 /* 9.
   Write a function to hide email addresses to protect them from unauthorized users.
     "somerandomaddress@example.com" -> "somerand...@example.com" */
+/* 
+ logika:
+ // delimo string na dva dela.
+  // jedan pre @ i drugi posle @. part1 = spitted prvi deo,
+  part2 je drugi deo.
+ */
 
 function protectEmail(inputEmail) {
   var splitted, part1, part2;
   splitted = inputEmail.split("@");
   part1 = splitted[0];
 
-  part1 = part1.substring(0, 0.5 * part1.length);
+  part1 = part1.substring(0, 0.5 * part1.length); // od zadatog parametra do polovine  duzine niza
   part2 = splitted[1];
 
-  return part1 + "...@" + part2;
+  return part1 + "...@" + splitted[1];
 }
 
 console.log(protectEmail("pera.zdera@bit.rs"));
 /*
- */
+logika da odredimo poziciju @ preko indexOf. Kada je odredjena sama pozicija 
+sa slice() funkcijom koja .slice(P,K)	Vraća kopiju niza počev od indeksa P do indeksa K. 
+Vratimo od @ do kraja stringa. U return napisemo ... + vracenu promenljivu. 
+s.split(S)	Vraća niz delova stringa, odvojenih separatorom S.*/
 
 function protectEmail(email) {
   var position = email.indexOf("@");
@@ -166,7 +177,9 @@ function protectEmail(email) {
   return "..." + newEmail;
 }
 
-console.log(protectEmail("nnradovic@gmail.com"));
+console.log(protectEmail("vladancupric@gmail.com"));
+var pos = "vladancupric".split("a");
+console.log(pos);
 
 /* 10.
   Write a program that accepts a string as input and swaps the case of each character. 
@@ -195,7 +208,11 @@ function swapTheCaseOfCharacter(str) {
 console.log(swapTheCaseOfCharacter("The Quick Brown Fox"));
 
 /* */
-
+/*logika je da prihvatim string kao parametar funkcije. Koja potom napravi od stringa  novi niz sa split()
+Kada to uradi proveravamo za svako slovo da li je veliko slovo.
+Ako nije onda ga pretvaramo u veliko ako jeste onda ga pretvatamo u malo slovo.
+Return novi niz. split() ako nema separator onda podrazumevamo da je separator zarez tj ,.
+s.split(S)	Vraća niz delova stringa, odvojenih separatorom S.*/
 function convert(str) {
   var newString = str.split("");
 

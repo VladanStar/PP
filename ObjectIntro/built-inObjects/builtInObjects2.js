@@ -24,9 +24,13 @@ function reverse(number) {
   var reversedNumber = parseInt(newString);
   return reversedNumber;
 }
-var s = reverse(12345);
-console.log(typeof s);
-console.log(s);
+console.log(reverse(12345));
+/*
+
+logika je da pretvorimo broj u string. Kroz for petlju ga okrenemo. 
+Onda parsiramo string u broj i prikazemo.
+*/
+
 //-----------second way----
 /* Write a JavaScript function that reverses a number.
     12345 -> 12345 */

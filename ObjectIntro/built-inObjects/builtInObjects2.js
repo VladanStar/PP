@@ -1,6 +1,6 @@
 //built in objects 2.
 
-/*1 Write a function to convert a number from one base (radix) to another. 
+/*0 Write a function to convert a number from one base (radix) to another. 
 Hint: Use one of the built-in functions and toString method of one of the built-in Object Wrappers;
 */
 function Replace(initiate, fromBase, toBase) {
@@ -12,6 +12,7 @@ console.log(res);
 
 /*1.
 Write a JavaScript function that reverses a number. typeof result of the function should be “number”.
+The toString() method returns a string representing the specified array and its elements.
 */
 
 function reverse(number) {
@@ -30,10 +31,12 @@ console.log(reverse(12345));
 logika je da pretvorimo broj u string. Kroz for petlju ga okrenemo. 
 Onda parsiramo string u broj i prikazemo.
 */
-
 //-----------second way----
 /* Write a JavaScript function that reverses a number.
-    12345 -> 12345 */
+    12345 -> 12345 
+    The reverse() method reverses an array in place. 
+    The first array element becomes the last, and the last array element becomes the first.
+    */
 
 var array1 = [1, 2, 3, 4, 5];
 var reversed = array1.reverse();
@@ -41,6 +44,9 @@ var reversed = array1.reverse();
 console.log(reversed);
 
 //2.Write a JavaScript function that returns a passed string with letters in alphabetical order.
+/* 
+The join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
+*/
 function sortString(string) {
   var lowerString = string.toLowerCase();
   var arrayString = [];
@@ -71,6 +77,10 @@ are sorted from A to Z.
 logika razdvojimo string pomocu split(" "). Novi niz newString1 sluzi da sortiramo 
 i a.join(S)	Vraća string u kome su elementi niza odvojeni separatorom S.I to je za niz
 Sa sledecom for petljom od niza pravimo string koji ima izmedju reci razmak " ".
+
+The split() method divides a String into an ordered list of substrings, puts these substrings into an array,
+ and returns the array.  The division is done by searching for a pattern;
+  where the pattern is provided as the first parameter in the method's call.
 */
 function makeA(str) {
   var newString = str.split(" ");
@@ -79,8 +89,8 @@ function makeA(str) {
   for (var i = 0; i < newString.length; i++) {
     newString1[i] = newString[i].split("").sort().join("");
   }
-  for (var i = 0; i < newString.length; i++){
-    newString2 += newString1[i] +" ";
+  for (var i = 0; i < newString.length; i++) {
+    newString2 += newString1[i] + " ";
   }
   return newString2;
 }
@@ -171,7 +181,8 @@ console.log(protectEmail("pera.zdera@bit.rs"));
 logika da odredimo poziciju @ preko indexOf. Kada je odredjena sama pozicija 
 sa slice() funkcijom koja .slice(P,K)	Vraća kopiju niza počev od indeksa P do indeksa K. 
 Vratimo od @ do kraja stringa. U return napisemo ... + vracenu promenljivu. 
-s.split(S)	Vraća niz delova stringa, odvojenih separatorom S.*/
+s.split(S)	Vraća niz delova stringa, odvojenih separatorom S.
+The slice() method extracts a section of a string and returns it as a new string, without modifying the original string*/
 
 function protectEmail(email) {
   var position = email.indexOf("@");
@@ -216,7 +227,9 @@ console.log(swapTheCaseOfCharacter("The Quick Brown Fox"));
 Kada to uradi proveravamo za svako slovo da li je veliko slovo.
 Ako nije onda ga pretvaramo u veliko ako jeste onda ga pretvatamo u malo slovo.
 Return novi niz. split() ako nema separator onda podrazumevamo da je separator zarez tj ,.
-s.split(S)	Vraća niz delova stringa, odvojenih separatorom S.*/
+s.split(S)	Vraća niz delova stringa, odvojenih separatorom S.
+The split() method divides a String into an ordered list of substrings, puts these substrings into an array, and returns the array.  The division is done by searching for a pattern; where the pattern is provided as the first parameter in the method's call.  
+*/
 function convert(str) {
   var newString = str.split("");
 

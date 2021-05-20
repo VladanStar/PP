@@ -3,7 +3,9 @@
 // Input: [2, 4, 7, 11, -2, 1]
 // Output: [2, 2, 4, 4, 7, 7, 11, 11,  -2, -2, 1, 1]
 /* 
-logika duplirati svaki element sa push element, element u novi niz
+logika duplirati svaki element sa push element, element u novi niz.
+The push() method adds one or more elements to the end of an array and returns the new length of the array.
+The forEach() method executes a provided function once for each array element.
 */
 
 var duplicateElement = function (input) {
@@ -20,6 +22,13 @@ console.log(duplicateElement([2, 4, 7, 11, -2, 1]));
 // Write a functional expression that removes all duplicates in a given array.
 // Input: [8, 13, 8, 9, 12, 8, 1, 1, 4, 13]
 // Output: [1, 4, 8, 9, 12, 13]
+/*
+The indexOf() method returns the first index at which a given element can be found in the array,
+ or -1 if it is not present.
+ The slice() method returns a shallow copy of a portion of an array into a new array object selected
+  from start to end (end not included) where start and end represent the index of items in that array.
+   The original array will not be modified.
+*/
 
 function removeDuplicate(input) {
   var copy = input.slice();
@@ -38,7 +47,12 @@ function removeDuplicate(input) {
 console.log(removeDuplicate([8, 13, 8, 9, 12, 8, 1, 1, 4, 13]));
 
 /*   -----------------second way ----------------*/
-/*****   2 drugi nacin   ****/
+/*****   2 drugi nacin
+ *
+ * The sort() method sorts the elements of an array in place and returns the sorted array.
+ * The default sort order is ascending, built upon converting the elements into strings,
+ * then comparing their sequences of UTF-16 code units values.
+ * ****/
 
 var removeDuplicate = function (arr) {
   arr.sort(function (a, b) {
@@ -57,6 +71,10 @@ console.log(removeDuplicate([8, 13, 8, 9, 12, 8, 1, 1, 4, 13]));
 // Write a function that checks if a given array has odd number of elements.
 // Input: [1, 2, 9, 2, 1]
 // Output: true
+/* 
+The find() method returns the value of the first element in the provided array
+ that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+*/
 function hasOddNumber(input) {
   var element = input.find(function (elm) {
     return elm % 2 !== 0;
@@ -74,6 +92,9 @@ console.log(hasOddNumber([8, 2, 2, 21, 6]));
 //If the given array has an even number of elements, print out an error message.
 // Input: [-1, 8.1, 3, 6, 2.3, 44, 2.11]
 // Output: 4
+/*
+The Math.round() function returns the value of a number rounded to the nearest integer.
+*/
 
 var lessThanMidd = function (arr) {
   if (arr.length % 2 === 0) {
@@ -96,6 +117,10 @@ console.log(lessThanMidd([-1, 8.1, 3, 6, 2.3, 44, 2.11]));
 // Input: [1, 4, -2, 11, 8, 1, -2, 3]
 // Output:  { minValue: -2, minLastIndex: 6 }
 
+/* 
+The lastIndexOf() method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.
+*/
+
 var findSmallest = function (arr) {
   var min = arr[0];
   for (var i = arr.length - 1; i >= 0; i--) {
@@ -110,6 +135,10 @@ console.log(findSmallest([1, 4, -2, 11, 8, 1, -2, 3]));
 
 //  5.a
 //Write a function that finds all the elements in a given array less than a given element.
+/* 
+The parseInt() function parses a string argument and returns an integer of
+ the specified radix (the base in mathematical numeral systems).
+*/
 
 function lessThan(arr) {
   var i = 0;
@@ -128,6 +157,7 @@ b. Write a function that finds all the elements in a given array that start with
 substring. The function should be case insensitive.
 Input: [’JavaScript’, ’Programming’, ’fun’, ’product’]
 Output: [’Programming’, ‘product’]
+The toLowerCase() method returns the calling string value converted to lower case.
 */
 var findWord = function (arr) {
   var b = "pro";
@@ -145,6 +175,10 @@ c. Write a function that expects an array and a callback function that filters o
 some of the elements. Use functions defined in a) or b) to test it.
 */
 //poenta je funkcija da se prosledi i callback funkcija da se pozove da bi funkcija radila
+/* 
+The toUpperCase() method returns the calling string value converted to uppercase 
+(the value will be converted to a string if it isn't one).
+*/
 function startWith(a, b) {
   result = [];
   for (var i = 0; i < a.length; i++) {
@@ -154,7 +188,6 @@ function startWith(a, b) {
   }
   return result;
 }
-
 console.log(startWith(["JavaScript", "Programming", "fun", "product"], "pro"));
 
 function exercise5(a, b, callback) {
@@ -303,6 +336,7 @@ console.log(allCapitals(str));
 
 // 7.zadatak b)
 // Write a function that checks if a given string contains any digits.
+/*The match() method retrieves the result of matching a string against a regular expression. */
 var str1 = "vladan1cupric";
 
 var containDigit = function (s) {

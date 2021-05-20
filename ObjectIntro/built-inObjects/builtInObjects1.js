@@ -2,6 +2,9 @@
 // Write a functional expression that duplicates each element of a given array.
 // Input: [2, 4, 7, 11, -2, 1]
 // Output: [2, 2, 4, 4, 7, 7, 11, 11,  -2, -2, 1, 1]
+/* 
+logika duplirati svaki element sa push element, element u novi niz
+*/
 
 var duplicateElement = function (input) {
   var output = [];
@@ -21,7 +24,6 @@ console.log(duplicateElement([2, 4, 7, 11, -2, 1]));
 function removeDuplicate(input) {
   var copy = input.slice();
   var output = [];
-
   for (var i = 0; i < copy.length; i++) {
     if (output.indexOf(copy[i]) === -1) {
       output.push(copy[i]);
@@ -29,12 +31,10 @@ function removeDuplicate(input) {
       continue;
     }
   }
-
   return output.sort(function (a, b) {
     return a - b;
   });
 }
-
 console.log(removeDuplicate([8, 13, 8, 9, 12, 8, 1, 1, 4, 13]));
 
 /*   -----------------second way ----------------*/
@@ -44,14 +44,12 @@ var removeDuplicate = function (arr) {
   arr.sort(function (a, b) {
     return a - b;
   });
-
   var newArr = [];
   for (var i = 0; i < arr.length; i++) {
     if (newArr[newArr.length - 1] !== arr[i]) {
       newArr.push(arr[i]);
     }
   }
-
   return newArr;
 };
 console.log(removeDuplicate([8, 13, 8, 9, 12, 8, 1, 1, 4, 13]));
@@ -93,7 +91,7 @@ var lessThanMidd = function (arr) {
 console.log(lessThanMidd([-1, 8.1, 3, 6, 2.3, 44, 2.11]));
 
 /* ------------------------  4 ---------------------*/
-// Write a function that finds the smallest element of a given array. 
+// Write a function that finds the smallest element of a given array.
 //The function should return an object that contains the smallest value and its last position in the array.
 // Input: [1, 4, -2, 11, 8, 1, -2, 3]
 // Output:  { minValue: -2, minLastIndex: 6 }
@@ -350,7 +348,7 @@ var belongInterval = function (n) {
 console.log(belongInterval(nmb));
 
 // 7. zadatak e)
-// Write a function named validator that returns an object with properties stringValidator, 
+// Write a function named validator that returns an object with properties stringValidator,
 //passwordValidator, colorValidator, and yearValidator referencing the functions from a) to d).
 
 function validator(s, a, b, c, d) {
@@ -397,7 +395,7 @@ var arrival = function (time1, time2) {
 
 console.log(arrival(time1, time2));
 
-//10. a. Write a constructor function that creates points in the space. 
+//10. a. Write a constructor function that creates points in the space.
 //Each point in the space has its own x, y, and z coordinate.For example, (3, 5, 1) can the point in the space.
 function Points(x, y, z) {
   this.x = x;

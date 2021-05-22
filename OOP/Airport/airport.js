@@ -101,7 +101,7 @@
   //////////////////////////////////////////////////////////////////////////////////////////
   //Create Person//
   var personInfo = new Person("Vladan", "Cupric");
-  var personTwoInfo = new Person("Bojan", "Markovic");
+  var personTwoInfo = new Person("Stevan", "Stasic");
   var personThreeInfo = new Person("Boris", "Krstic");
   var personFourInfo = new Person("Nemanja", "Petrika");
 

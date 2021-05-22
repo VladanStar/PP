@@ -119,21 +119,21 @@
   var passengerFive = new Passenger(
     new Person("John", "Snow"),
     new Seat(5, "Economic")
-    );
-    var passengerSix = new Passenger(
-        new Person("Cersei", "Lannister"),
-        new Seat());
+  );
+  var passengerSix = new Passenger(
+    new Person("Cersei", "Lannister"),
+    new Seat()
+  );
 
   //Create Flight//
   var bgParis = new Flight("Belgrade - Paris", "May 21 2021");
   bgParis.addPassenger(passengerOne);
-    bgParis.addPassenger(passengerTwo);
-    bgParis.addPassenger(passengerFive);
-    bgParis.addPassenger(passengerSix);
+  bgParis.addPassenger(passengerTwo);
+  bgParis.addPassenger(passengerFive);
+  bgParis.addPassenger(passengerSix);
   var barcelonaBelgrade = new Flight("Barcelona - Belgrade", "May 31 2021");
   barcelonaBelgrade.addPassenger(passengerThree);
   barcelonaBelgrade.addPassenger(passengerFour);
-  
 
   // Create Airport//
   var aeroplane = new Airport("Nikola Tesla");

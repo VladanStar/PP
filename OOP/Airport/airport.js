@@ -67,14 +67,14 @@
         }
             this.listOfPassengers.push(passenger);
 
-      function provera(a) {
-        if (a > 100 || a < 0) {
+      function checkPassengers(a) {
+        if (a > 100) {
           throw Error("Warning!!! Aeroplane is full!!!");
         }
       }
 
       try {
-        provera(this.getNumberOfPassengers());
+        checkPassengers(this.getNumberOfPassengers());
       } catch (err) {
         console.log("Warning!!! Aeroplane is full!!!");
       }

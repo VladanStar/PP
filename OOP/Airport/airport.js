@@ -64,8 +64,8 @@
         if (this.listOfPassengers[i].seat.number == passenger.seat.number) {
           console.log("Error. This seat is taken. Please change seat number");
         }
-        }
-            this.listOfPassengers.push(passenger);
+      }
+      this.listOfPassengers.push(passenger);
 
       function checkPassengers(a) {
         if (a > 100) {
@@ -78,8 +78,17 @@
       } catch (err) {
         console.log("Warning!!! Aeroplane is full!!!");
       }
-  
-    };
+      };
+      this.removePassenger = function (delName) {
+        for (var i = this.listOfPassengers.length - 1; i >= 0; --i) {
+            if (
+                this.listOfPassengers[i].name == delName.name &&
+                this.listOfPassengers[i].surname == delName.surname
+            ) {
+                this.listOfPassengers.splice(i,1);
+            }
+        }
+      };
 
     this.getData = function () {
       var flightString = "";
@@ -158,7 +167,8 @@
 
   var bgLondon = new Flight("Belgrade - London", "October 15 2021");
   bgLondon.addPassenger(passengerFive);
-  bgLondon.addPassenger(passengerSix);
+    bgLondon.addPassenger(passengerSix);
+  bgLondon.removePassenger("John Snow");
 
   // Create Airport//
   var aeroplane = new Airport("Nikola Tesla");

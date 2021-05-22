@@ -118,7 +118,7 @@
   var passengerFour = new Passenger(personFourInfo, seatFourInfo);
   var passengerFive = new Passenger(
     new Person("John", "Snow"),
-    new Seat(5, "Economic")
+    new Seat(6, "Economic")
   );
   var passengerSix = new Passenger(
     new Person("Cersei", "Lannister"),
@@ -129,15 +129,19 @@
   var bgParis = new Flight("Belgrade - Paris", "May 21 2021");
   bgParis.addPassenger(passengerOne);
   bgParis.addPassenger(passengerTwo);
-  bgParis.addPassenger(passengerFive);
-  bgParis.addPassenger(passengerSix);
+  
   var barcelonaBelgrade = new Flight("Barcelona - Belgrade", "May 31 2021");
   barcelonaBelgrade.addPassenger(passengerThree);
-  barcelonaBelgrade.addPassenger(passengerFour);
+    barcelonaBelgrade.addPassenger(passengerFour);
+    
+    var bgLondon = new Flight("Belgrade - London", "October 15 2021");
+    bgLondon.addPassenger(passengerFive);
+    bgLondon.addPassenger(passengerSix);
 
   // Create Airport//
   var aeroplane = new Airport("Nikola Tesla");
   aeroplane.addFlight(bgParis);
-  aeroplane.addFlight(barcelonaBelgrade);
+    aeroplane.addFlight(barcelonaBelgrade);
+    aeroplane.addFlight(bgLondon);
   console.log(aeroplane.getData());
 })(); //Closing tag of Immediate Function

@@ -120,6 +120,7 @@
     var passengerTwo = new Passenger(personTwoInfo, seatTwoInfo);
     var passengerThree = new Passenger(personThreeInfo, seatThreeInfo);
     var passengerFour = new Passenger(personFourInfo, seatFourInfo);
+    var passengerFive = new Passenger(new Person("John", "Snow"), new Seat(5, "Economic"));
 
 
     //Create Flight//
@@ -129,6 +130,7 @@
     var barcelonaBelgrade = new Flight("Barcelona - Belgrade", "May 31 2021");
     barcelonaBelgrade.addPassenger(passengerThree);
     barcelonaBelgrade.addPassenger(passengerFour);
+    bgParis.addPassenger(passengerFive);
 
     // Create Airport//
     var aeroplane = new Airport('Nikola Tesla');

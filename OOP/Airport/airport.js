@@ -49,7 +49,7 @@
 
   function Flight(relation, date) {
     this.relation = relation;
-    this.date = date;
+    this.date = new Date(date);
     this.listOfPassengers = [];
 
     this.getNumberOfPassengers = function () {
@@ -78,17 +78,17 @@
       } catch (err) {
         console.log("Warning!!! Aeroplane is full!!!");
       }
-      };
-      this.removePassenger = function (delName) {
-        for (var i = this.listOfPassengers.length - 1; i >= 0; --i) {
-            if (
-                this.listOfPassengers[i].name == delName.name &&
-                this.listOfPassengers[i].surname == delName.surname
-            ) {
-                this.listOfPassengers.splice(i,1);
-            }
+    };
+    this.removePassenger = function (delName) {
+      for (var i = this.listOfPassengers.length - 1; i >= 0; --i) {
+        if (
+          this.listOfPassengers[i].name == delName.name &&
+          this.listOfPassengers[i].surname == delName.surname
+        ) {
+          this.listOfPassengers.splice(i, 1);
         }
-      };
+      }
+    };
 
     this.getData = function () {
       var flightString = "";
@@ -96,7 +96,7 @@
       for (var i = 0; i < this.listOfPassengers.length; i++) {
         flightString += "\n" + this.listOfPassengers[i].getData();
       }
-      return this.date + ", \t" + this.relation + "\n" + flightString + "\n";
+      return this.date + ",\n \t" + this.relation + "\n" + flightString + "\n";
     };
   }
 
@@ -167,8 +167,11 @@
 
   var bgLondon = new Flight("Belgrade - London", "October 15 2021");
   bgLondon.addPassenger(passengerFive);
-    bgLondon.addPassenger(passengerSix);
-  bgLondon.removePassenger("John Snow");
+
+  //bgLondon.removePassenger("John Snow");
+  bgLondon.addPassenger(
+    new Passenger(new Person("Cersei", "Lannister"), new Seat())
+  );
 
   // Create Airport//
   var aeroplane = new Airport("Nikola Tesla");

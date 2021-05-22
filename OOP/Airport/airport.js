@@ -57,11 +57,33 @@
     };
 
     this.addPassenger = function (passenger) {
-      this.listOfPassengers.push(passenger);
+      //   if (this.listOfPassengers.length > 100) {
+      //     return console.log("Error. Flight is full");
+      //   }
+      for (var i = 0; i < this.listOfPassengers.length; i++) {
+        if (this.listOfPassengers[i].seat.number == passenger.seat.number) {
+          console.log("Error. This seat is taken. Please change seat number");
+        }
+        }
+            this.listOfPassengers.push(passenger);
+
+      function provera(a) {
+        if (a > 100 || a < 0) {
+          throw Error("Warning!!! Aeroplane is full!!!");
+        }
+      }
+
+      try {
+        provera(this.getNumberOfPassengers());
+      } catch (err) {
+        console.log("Warning!!! Aeroplane is full!!!");
+      }
+  
     };
 
     this.getData = function () {
       var flightString = "";
+
       for (var i = 0; i < this.listOfPassengers.length; i++) {
         flightString += "\n" + this.listOfPassengers[i].getData();
       }
@@ -129,19 +151,19 @@
   var bgParis = new Flight("Belgrade - Paris", "May 21 2021");
   bgParis.addPassenger(passengerOne);
   bgParis.addPassenger(passengerTwo);
-  
+
   var barcelonaBelgrade = new Flight("Barcelona - Belgrade", "May 31 2021");
   barcelonaBelgrade.addPassenger(passengerThree);
-    barcelonaBelgrade.addPassenger(passengerFour);
-    
-    var bgLondon = new Flight("Belgrade - London", "October 15 2021");
-    bgLondon.addPassenger(passengerFive);
-    bgLondon.addPassenger(passengerSix);
+  barcelonaBelgrade.addPassenger(passengerFour);
+
+  var bgLondon = new Flight("Belgrade - London", "October 15 2021");
+  bgLondon.addPassenger(passengerFive);
+  bgLondon.addPassenger(passengerSix);
 
   // Create Airport//
   var aeroplane = new Airport("Nikola Tesla");
   aeroplane.addFlight(bgParis);
-    aeroplane.addFlight(barcelonaBelgrade);
-    aeroplane.addFlight(bgLondon);
+  aeroplane.addFlight(barcelonaBelgrade);
+  aeroplane.addFlight(bgLondon);
   console.log(aeroplane.getData());
 })(); //Closing tag of Immediate Function

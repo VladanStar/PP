@@ -62,21 +62,12 @@
       //   }
       for (var i = 0; i < this.listOfPassengers.length; i++) {
         if (this.listOfPassengers[i].seat.number == passenger.seat.number) {
-          console.log("Error. This seat is taken. Please change seat number");
+          console.log(
+            "Error. This seat is taken. Please change seat number " +
+              this.listOfPassengers[i].person.getData() +
+              " can not be added."
+          );
         }
-      }
-
-      for (var i = 0; i < this.listOfPassengers.length; i++) {
-        // console.log(this.listPassengers[i].seat.number)
-        // console.log(passenger.seat.number)
-        if (this.listOfPassengers[i].seat.number == passenger.seat.number) {
-          return;
-        }
-        console.log(
-          "Error. This seat is taken. Please change seat number. " +
-            this.listOfPassengers[i].person.getData() +
-            " can not be added."
-        );
       }
       this.listOfPassengers.push(passenger);
 
@@ -150,7 +141,7 @@
   var personFourInfo = new Person("Nemanja", "Petrika");
 
   //Create Seat//
-  var seatInfo = new Seat(2, "B");
+  var seatInfo = new Seat(1, "B");
   var seatTwoInfo = new Seat(2, "B");
   var seatThreeInfo = new Seat(5, "B");
   var seatFourInfo = new Seat(8, "B");

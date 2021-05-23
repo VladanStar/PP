@@ -57,13 +57,10 @@
     };
 
     this.addPassenger = function (passenger) {
-      //   if (this.listOfPassengers.length > 100) {
-      //     return console.log("Error. Flight is full");
-      //   }
       for (var i = 0; i < this.listOfPassengers.length; i++) {
-        if (this.listOfPassengers[i].seat.number == passenger.seat.number) {
-          console.log(
-            "Error. This seat is taken. Please change seat number " +
+        if (this.listOfPassengers[i].seat.number === passenger.seat.number) {
+          return console.log(
+            "Error. This seat is taken. Please change seat number, passenger " +
               this.listOfPassengers[i].person.getData() +
               " can not be added."
           );
@@ -93,15 +90,26 @@
         }
       }
     };
+    this.relationShort = function(relation){
+      var words = this.relation.split(" ");
+      var separated1 = words[0];
+      var separated2 = words[2];
+      var pocetak = separated1.charAt(0) + separated1.charAt(separated1.length-1).toUpperCase();
+      var kraj = separated2.charAt(0) + separated2.charAt(separated2.length-1).toUpperCase();
+      return pocetak + " - " + kraj;
+
+    }
 
     this.getData = function () {
       var flightString = "";
+      var customDate = this.date.getDate() + '.' + (this.date.getMonth() + 1) + '.' + this.date.getFullYear();
 
       for (var i = 0; i < this.listOfPassengers.length; i++) {
         flightString += "\n" + this.listOfPassengers[i].getData();
       }
-      return this.date + ",\n \t" + this.relation + "\n" + flightString + "\n";
+      return this.date + ",\n \t" + this.relation.toString() + "  -> \n" + customDate + "\n"+ this.relationShort() + "\n" + flightString + "\n";
     };
+
   }
 
   ////////////////// AIRPORT //////////////////
@@ -135,16 +143,20 @@
 
   //////////////////////////////////////////////////////////////////////////////////////////
   //Create Person//
-  var personInfo = new Person("Vladan", "Cupric");
+  
   var personTwoInfo = new Person("Stevan", "Stasic");
+  var personInfo = new Person("Vladan", "Cupric");
   var personThreeInfo = new Person("Boris", "Krstic");
   var personFourInfo = new Person("Nemanja", "Petrika");
+  var personSevenInfo = new Person("Boris", "Popovic");
 
   //Create Seat//
+  
   var seatInfo = new Seat(1, "B");
   var seatTwoInfo = new Seat(2, "B");
-  var seatThreeInfo = new Seat(5, "B");
+  var seatThreeInfo = new Seat(1, "B");
   var seatFourInfo = new Seat(8, "B");
+  
 
   //Create Passenger//
   var passengerOne = new Passenger(personInfo, seatInfo);
@@ -159,6 +171,7 @@
     new Person("Cersei", "Lannister"),
     new Seat()
   );
+  
 
   //Create Flight//
   var bgParis = new Flight("Belgrade - Paris", "May 21 2021");
@@ -171,6 +184,7 @@
 
   var bgLondon = new Flight("Belgrade - London", "October 15 2021");
   bgLondon.addPassenger(passengerFive);
+
 
   //bgLondon.removePassenger("John Snow");
   bgLondon.addPassenger(

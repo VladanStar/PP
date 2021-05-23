@@ -64,6 +64,7 @@
               this.listOfPassengers[i].person.getData() +
               " can not be added."
           );
+          break;
         }
       }
       this.listOfPassengers.push(passenger);
@@ -93,23 +94,78 @@
     this.relationShort = function(relation){
       var words = this.relation.split(" ");
       var separated1 = words[0];
-      var separated2 = words[2];
+      var separated2 = words[1];
       var pocetak = separated1.charAt(0) + separated1.charAt(separated1.length-1).toUpperCase();
       var kraj = separated2.charAt(0) + separated2.charAt(separated2.length-1).toUpperCase();
       return pocetak + " - " + kraj;
 
-    }
+     }
+    // this.relationShort = function (relation) {
+    
+    //   var result1 = "";
+    //   var result2 = "";
+
+    //   var customDate =
+    //     this.date.getDate() +
+    //     "." +
+    //     (this.date.getMonth() + 1) +
+    //     "." +
+    //     this.date.getFullYear();
+
+    //   relation = this.relation.split(" ");
+    //   for (var i = this.relation[0].length - 1; i > 0; i++) {
+    //     if (
+    //       relation[0][i] !== "a" &&
+    //       relation[0][i] !== "e" &&
+    //       relation[0][i] !== "i" &&
+    //       relation[0][i] !== "o" &&
+    //       relation[0][i] !== "u"
+    //     ) {
+    //       result1 = relation[0][0] + relation[0][i].toUpperCase();
+    //       break;
+    //     }
+    //   }
+    //   for (var i = relation[1].length - 1; i > 0; i--) {
+    //     if (
+    //       relation[1][i] !== "a" &&
+    //       relation[1][i] !== "e" &&
+    //       relation[1][i] !== "i" &&
+    //       relation[1][i] !== "o" &&
+    //       relation[1][i] !== "u"
+    //     ) {
+    //       result2 = relation[1][0] + relation[1][i].toUpperCase();
+    //       break;
+    //     }
+    //   }
+
+    //   return customDate + " " + result1 + " - " + result2;
+    // };
 
     this.getData = function () {
       var flightString = "";
-      var customDate = this.date.getDate() + '.' + (this.date.getMonth() + 1) + '.' + this.date.getFullYear();
+      var customDate =
+        this.date.getDate() +
+        "." +
+        (this.date.getMonth() + 1) +
+        "." +
+        this.date.getFullYear();
 
       for (var i = 0; i < this.listOfPassengers.length; i++) {
         flightString += "\n" + this.listOfPassengers[i].getData();
       }
-      return this.date + ",\n \t" + this.relation.toString() + "  -> \n" + customDate + "\n"+ this.relationShort() + "\n" + flightString + "\n";
+      return (
+        this.date +
+        ",\n \t" +
+        this.relation.toString() +
+        "  -> \n" +
+        customDate +
+        "\n" +
+        this.relationShort() +
+        "\n" +
+        flightString +
+        "\n"
+      );
     };
-
   }
 
   ////////////////// AIRPORT //////////////////
@@ -143,7 +199,7 @@
 
   //////////////////////////////////////////////////////////////////////////////////////////
   //Create Person//
-  
+
   var personTwoInfo = new Person("Stevan", "Stasic");
   var personInfo = new Person("Vladan", "Cupric");
   var personThreeInfo = new Person("Boris", "Krstic");
@@ -151,12 +207,11 @@
   var personSevenInfo = new Person("Boris", "Popovic");
 
   //Create Seat//
-  
+
   var seatInfo = new Seat(1, "B");
-  var seatTwoInfo = new Seat(2, "B");
+  var seatTwoInfo = new Seat(1, "B");
   var seatThreeInfo = new Seat(1, "B");
   var seatFourInfo = new Seat(8, "B");
-  
 
   //Create Passenger//
   var passengerOne = new Passenger(personInfo, seatInfo);
@@ -171,20 +226,18 @@
     new Person("Cersei", "Lannister"),
     new Seat()
   );
-  
 
   //Create Flight//
-  var bgParis = new Flight("Belgrade - Paris", "May 21 2021");
+  var bgParis = new Flight("Belgrade Paris", "May 21 2021");
   bgParis.addPassenger(passengerOne);
   bgParis.addPassenger(passengerTwo);
 
-  var barcelonaBelgrade = new Flight("Barcelona - Belgrade", "May 31 2021");
+  var barcelonaBelgrade = new Flight("Barcelona Belgrade", "May 31 2021");
   barcelonaBelgrade.addPassenger(passengerThree);
   barcelonaBelgrade.addPassenger(passengerFour);
 
-  var bgLondon = new Flight("Belgrade - London", "October 15 2021");
+  var bgLondon = new Flight("Belgrade London", "October 15 2021");
   bgLondon.addPassenger(passengerFive);
-
 
   //bgLondon.removePassenger("John Snow");
   bgLondon.addPassenger(

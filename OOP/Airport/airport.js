@@ -65,6 +65,19 @@
           console.log("Error. This seat is taken. Please change seat number");
         }
       }
+
+      for (var i = 0; i < this.listOfPassengers.length; i++) {
+        // console.log(this.listPassengers[i].seat.number)
+        // console.log(passenger.seat.number)
+        if (this.listOfPassengers[i].seat.number == passenger.seat.number) {
+          return;
+        }
+        console.log(
+          "Error. This seat is taken. Please change seat number. " +
+            this.listOfPassengers[i].person.getData() +
+            " can not be added."
+        );
+      }
       this.listOfPassengers.push(passenger);
 
       function checkPassengers(a) {
@@ -137,7 +150,7 @@
   var personFourInfo = new Person("Nemanja", "Petrika");
 
   //Create Seat//
-  var seatInfo = new Seat(1, "B");
+  var seatInfo = new Seat(2, "B");
   var seatTwoInfo = new Seat(2, "B");
   var seatThreeInfo = new Seat(5, "B");
   var seatFourInfo = new Seat(8, "B");
@@ -179,4 +192,4 @@
   aeroplane.addFlight(barcelonaBelgrade);
   aeroplane.addFlight(bgLondon);
   console.log(aeroplane.getData());
-})(); //Closing tag of Immediate Function
+})();

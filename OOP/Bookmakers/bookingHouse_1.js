@@ -15,7 +15,11 @@
   //Pravimo objecat koji ima samo konstante
   var continents = Object.freeze({
     ASIA: "AS",
-    EUROPE: "EU",
+      EUROPE: "EU",
+      AFRICA: "AF",
+      SOUTH_AMERICA: "SA",
+      NORT_AMERICA: "NA",
+    AUSTRALIA:"AU"
   });
 
   // Person - name, surname, date of birth

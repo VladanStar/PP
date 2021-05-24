@@ -182,7 +182,7 @@
 
   //Pravimo instancu dve adrese;
   var address = new Address("Generala Birjukova 2", "11070 Novi Beograd", serbia);
-  var address1 = new Address("Bata Zivojinovic Valter 2341/9", "Beijing", china);
+  var address1 = new Address("Bate Zivojinovica Valtera 2341/9", " NaN Beijing", china);
   address.fullAddress(serbia);
   address1.fullAddress(china);
 

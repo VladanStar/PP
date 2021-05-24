@@ -162,7 +162,7 @@
   var serbia = new Country("Serbia", 3, continents.EUROPE);
   var china = new Country("China", 3, continents.ASIA);
   // console.log(serbia.stickerCountry());
-  // console.log(montenegro.stickerCountry());
+  // console.log(china.stickerCountry());
 
   // Add a method to BettingPlace that returns a formatted string containing a street (without a number), postal code and city, and sum of all bet amounts of that place.
   // Nemanjina, 11000 Belgrade, sum of all bets: 50000eur
@@ -173,8 +173,8 @@
   var nemanja = new Person("Nemanja", "Petrika", "1986-05-13");
   var boban = new Person("Boban", "Stojanovic", "1984-12-5");
   var milorad = new Person("Milorad", "Petrika", "1978-04-13");
-  // console.log(nikola.getData())
-  // console.log(darko.getData());
+  // console.log(vladan.getData())
+  // console.log(nemanja.getData());
 
   //Pravimo instancu dve adrese;
   var address = new Address("Generala Birjukova 2", "11070 Novi Beograd", serbia);
@@ -182,7 +182,7 @@
   address.fullAddress(serbia);
   address1.fullAddress(china);
 
-  // console.log(address.fullAddress(montenegro));
+  // console.log(address.fullAddress(china));
 
   //Pravimo instancu igraca
   var player1 = new Player(vladan, 1200, serbia);

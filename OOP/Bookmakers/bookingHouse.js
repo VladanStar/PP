@@ -32,8 +32,8 @@
     this.dateOfBirth = new Date(dateOfBirth);
   }
 
-  const stefan = new Person("Stefan", "Pavlovic", "10.21.1992");
-  const trump = new Person("Donald", "Trump", "06.14.1946");
+  const vladan = new Person("Vladan", "Cupric", "03.11.1973");
+  const stevan = new Person("Stevan", "Stasic", "04.14.2000");
 
   //Create Name + Surname:
   Person.prototype.getFullName = function () {
@@ -61,14 +61,14 @@
     this.country = country;
   }
 
-  const playerOne = new Player(stefan, 100, serbia);
-  const playerTwo = new Player(trump, 200, usa);
+  const playerOne = new Player(vladan, 100, serbia);
+  const playerTwo = new Player(stevan, 200, usa);
 
   //Create player:
   Player.prototype.getPlayerData = function () {
     return `${
       serbia.name
-    }, ${playerOne.getAmount()} eur, ${stefan.getFullName()}, ${stefan.getPersonAge()} years`;
+    }, ${playerOne.getAmount()} eur, ${vladan.getFullName()}, ${vladan.getPersonAge()} years`;
   };
 
   //Create odds*bet amount:
@@ -89,17 +89,17 @@
 
   const personAddress = new Address(
     serbia.name,
-    "Arandjelovac",
-    34300,
-    "Gavrila Principa",
-    17
+    "Kragujevac",
+    34000,
+    "Kopaonicka",
+    48
   );
   const personTwoAddress = new Address(
     usa.name,
-    "New York",
-    10022,
-    "Fifth Avenue",
-    721
+    "Novi Sad",
+    12000,
+    "Fruskogorska",
+    7
   );
 
   //Create address:
@@ -117,8 +117,8 @@
     this.betSum = 0;
   }
 
-  const BettingPlaceArandjelovac = new BettingPlace(personAddress.street);
-  const BettingPlaceNewYork = new BettingPlace(personTwoAddress.street);
+  const BettingPlaceKG = new BettingPlace(personAddress.street);
+  const BettingPlaceNS = new BettingPlace(personTwoAddress.street);
 
   //Create List of players:
   BettingPlace.prototype.addPlayers = function (player) {
@@ -136,13 +136,13 @@
   };
 
   //To .push():
-  BettingPlaceArandjelovac.addPlayers(playerOne);
-  BettingPlaceNewYork.addPlayers(playerTwo);
+  BettingPlaceKG.addPlayers(playerOne);
+  BettingPlaceNS.addPlayers(playerTwo);
 
   //Create Betting Place:
   BettingPlace.prototype.getBettingPlaceData = function () {
     return `${this.address}, ${personAddress.postalCode} ${personAddress.city}`;
   };
 
-  console.log(BettingPlaceNewYork.numberOfPlayers);
+  console.log(BettingPlaceNS.numberOfPlayers);
 })();

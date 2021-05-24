@@ -4,7 +4,7 @@
 
 (function () {
   ////////// Create Country Short Name //////////
-  const continentObject = Object.freeze({
+  var continentObject = Object.freeze({
     EUROPE: "EU",
     ASIA: "AS",
     AFRICA: "AF",
@@ -20,8 +20,8 @@
     this.continent = continent;
   }
 
-  const serbia = new Country("SR", 10, continentObject.EUROPE);
-  const usa = new Country("US", 20, continentObject.NORTHAMERICA);
+  var serbia = new Country("SR", 10, continentObject.EUROPE);
+  var usa = new Country("US", 20, continentObject.NORTHAMERICA);
 
   //console.log(serbia);
 
@@ -32,17 +32,17 @@
     this.dateOfBirth = new Date(dateOfBirth);
   }
 
-  const vladan = new Person("Vladan", "Cupric", "03.11.1973");
-  const stevan = new Person("Stevan", "Stasic", "04.14.2000");
+  var vladan = new Person("Vladan", "Cupric", "03.11.1973");
+  var stevan = new Person("Stevan", "Stasic", "04.14.2000");
 
   //Create Name + Surname:
   Person.prototype.getFullName = function () {
-    return `${this.name} ${this.surname}`;
+    return this.name + " "+this.surname;
   };
 
   //Create Full name + Date of birth:
   Person.prototype.getPersonData = function () {
-    return `${this.getFullName()}, ${this.dateOfBirth.toLocaleDateString()}`;
+    return this.getFullName()+ " " + this.dateOfBirth.toLocaleDateString();
   };
 
   //Create years of person:
@@ -61,19 +61,19 @@
     this.country = country;
   }
 
-  const playerOne = new Player(vladan, 100, serbia);
-  const playerTwo = new Player(stevan, 200, usa);
+  var playerOne = new Player(vladan, 100, serbia);
+  var playerTwo = new Player(stevan, 200, usa);
 
   //Create player:
   Player.prototype.getPlayerData = function () {
-    return `${
+    return 
       serbia.name
-    }, ${playerOne.getAmount()} eur, ${vladan.getFullName()}, ${vladan.getPersonAge()} years`;
+     + " "+  playerOne.getAmount() + " "+eur +" " +vladan.getFullName() + " "+ vladan.getPersonAge() + " " + years;
   };
 
   //Create odds*bet amount:
   Player.prototype.getAmount = function () {
-    return `${serbia.odds * playerOne.betAmount}`;
+    return serbia.odds * playerOne.betAmount;
   };
 
   // console.log(playerOne.getPlayerData());
@@ -94,7 +94,7 @@
     "Kopaonicka",
     48
   );
-  const personTwoAddress = new Address(
+  var personTwoAddress = new Address(
     usa.name,
     "Novi Sad",
     12000,
@@ -104,7 +104,7 @@
 
   //Create address:
   Address.prototype.getAddressData = function () {
-    return `${this.street} ${this.streetNumber}, ${this.postalCode} ${this.city}, ${this.country}`;
+    return this.street + " "+this.streetNumber + " "+  this.postalCode  + " "+ this.city  + " "+ this.country;
   };
 
   //console.log(personAddress.getAddressData());
@@ -117,8 +117,8 @@
     this.betSum = 0;
   }
 
-  const BettingPlaceKG = new BettingPlace(personAddress.street);
-  const BettingPlaceNS = new BettingPlace(personTwoAddress.street);
+  var BettingPlaceKG = new BettingPlace(personAddress.street);
+  var BettingPlaceNS = new BettingPlace(personTwoAddress.street);
 
   //Create List of players:
   BettingPlace.prototype.addPlayers = function (player) {
@@ -128,7 +128,7 @@
   };
 
   BettingPlace.prototype.getData = function () {
-    let playerDataString = "";
+    var playerDataString = "";
     for (let i = 0; i < this.listOfPlayers.length; i++) {
       playerDataString += this.listOfPlayers[i].getData() + "\n";
     }
@@ -141,7 +141,7 @@
 
   //Create Betting Place:
   BettingPlace.prototype.getBettingPlaceData = function () {
-    return `${this.address}, ${personAddress.postalCode} ${personAddress.city}`;
+    return this.address + " "+personAddress.postalCode +" " +personAddress.city;
   };
 
   console.log(BettingPlaceNS.numberOfPlayers);

@@ -1,4 +1,5 @@
 (function () {
+  console.log("Hi, This is BIT Movie Festival and show mast go on!!!");
   // Kreiramo konstruktor za Zanr.
 
   function Genre(name) {

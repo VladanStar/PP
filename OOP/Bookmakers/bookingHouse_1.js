@@ -1,6 +1,6 @@
 (function () {
 
-    console.log("Hello Players World!!!")
+  console.log("Hello Players World!!! The GAME BEGINN!!!!!");
   // Country - name, odds, continent (EU, AS, AF, SA, NA, AU)
   // Create continents as constants (objects that can not change). So, when passing a continent as a parameter, you should pass Continent.ASIA.
   function Country(name, odds, continent) {
@@ -13,14 +13,14 @@
     };
   }
   //Pravimo objecat koji ima samo konstante
-  var continents = Object.freeze({
+  var continents = {
     ASIA: "AS",
       EUROPE: "EU",
       AFRICA: "AF",
       SOUTH_AMERICA: "SA",
       NORT_AMERICA: "NA",
     AUSTRALIA:"AU"
-  });
+  };
 
   // Person - name, surname, date of birth
   // Add a method to Person that returns a formatted string containing the name, surname and date of birth of the person (date of birth in dd.mm.yy format).

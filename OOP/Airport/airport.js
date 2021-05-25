@@ -21,7 +21,7 @@
     if (typeof number === "number" && number !== undefined) {
       this.number = number;
     } else {
-      this.number = Math.floor(10 + 90 * Math.random());
+      this.number = Math.floor( 91 * Math.random()+10);
     }
 
     if (category !== undefined) {
@@ -43,7 +43,7 @@
     this.getData = function () {
       return "\t\t" + this.seat.getData() + ", " + this.person.getData();
     };
-  }
+  };
 
   ////////////////// FLIGHT //////////////////
 
@@ -91,55 +91,55 @@
         }
       }
     };
-    this.relationShort = function(relation){
-      var words = this.relation.split(" ");
-      var separated1 = words[0];
-      var separated2 = words[1];
-      var pocetak = separated1.charAt(0) + separated1.charAt(separated1.length-1).toUpperCase();
-      var kraj = separated2.charAt(0) + separated2.charAt(separated2.length-1).toUpperCase();
-      return pocetak + " - " + kraj;
+    // this.relationShort = function(relation){
+    //   var words = this.relation.split(" ");
+    //   var separated1 = words[0];
+    //   var separated2 = words[1];
+    //   var pocetak = separated1.charAt(0) + separated1.charAt(separated1.length-1).toUpperCase();
+    //   var kraj = separated2.charAt(0) + separated2.charAt(separated2.length-1).toUpperCase();
+    //   return pocetak + " - " + kraj;
 
-     }
-    // this.relationShort = function (relation) {
+    //  }
+    this.relationShort = function (relation) {
     
-    //   var result1 = "";
-    //   var result2 = "";
+      var result1 = "";
+      var result2 = "";
 
-    //   var customDate =
-    //     this.date.getDate() +
-    //     "." +
-    //     (this.date.getMonth() + 1) +
-    //     "." +
-    //     this.date.getFullYear();
+      var customDate =
+        this.date.getDate() +
+        "." +
+        (this.date.getMonth() + 1) +
+        "." +
+        this.date.getFullYear();
 
-    //   relation = this.relation.split(" ");
-    //   for (var i = this.relation[0].length - 1; i > 0; i++) {
-    //     if (
-    //       relation[0][i] !== "a" &&
-    //       relation[0][i] !== "e" &&
-    //       relation[0][i] !== "i" &&
-    //       relation[0][i] !== "o" &&
-    //       relation[0][i] !== "u"
-    //     ) {
-    //       result1 = relation[0][0] + relation[0][i].toUpperCase();
-    //       break;
-    //     }
-    //   }
-    //   for (var i = relation[1].length - 1; i > 0; i--) {
-    //     if (
-    //       relation[1][i] !== "a" &&
-    //       relation[1][i] !== "e" &&
-    //       relation[1][i] !== "i" &&
-    //       relation[1][i] !== "o" &&
-    //       relation[1][i] !== "u"
-    //     ) {
-    //       result2 = relation[1][0] + relation[1][i].toUpperCase();
-    //       break;
-    //     }
-    //   }
+      relation = this.relation.split(" ");
+      for (var i = relation[0].length - 1; i > 0; i--) {
+        if (
+          relation[0][i] !== "a" &&
+          relation[0][i] !== "e" &&
+          relation[0][i] !== "i" &&
+          relation[0][i] !== "o" &&
+          relation[0][i] !== "u"
+        ) {
+          result1 = relation[0][0] + relation[0][i].toUpperCase();
+        
+        }
+      }
+      for (var i = relation[1].length - 1; i > 0; i--) {
+        if (
+          relation[1][i] !== "a" &&
+          relation[1][i] !== "e" &&
+          relation[1][i] !== "i" &&
+          relation[1][i] !== "o" &&
+          relation[1][i] !== "u"
+        ) {
+          result2 = relation[1][0] + relation[1][i].toUpperCase();
+          break;
+        }
+      }
 
-    //   return customDate + " " + result1 + " - " + result2;
-    // };
+      return customDate + " "+ result1 + " - " + result2;
+    };
 
     this.getData = function () {
       var flightString = "";
@@ -208,7 +208,7 @@
 
   //Create Seat//
 
-  var seatInfo = new Seat(1, "B");
+  var seatInfo = new Seat(2, "B");
   var seatTwoInfo = new Seat(1, "B");
   var seatThreeInfo = new Seat(1, "B");
   var seatFourInfo = new Seat(8, "B");

@@ -103,7 +103,7 @@
   /*** KREIRAMO INSTANCU FILMA UBACUJEMO  NAZIV FILMA, VREDNOST ZANRA. DUZINU U MIN ***/
   var movie1 = new Movie("Full Metal Jacket", drama.getData(), 116);
   var movie2 = new Movie("Shuter island", drama.getData(), 130);
-  var movie3 = new Movie(" The Shining", horror.getData(),146);
+  var movie3 = new Movie(" The Shining", horror.getData(), 146);
   var movie4 = new Movie("Rosemary's Baby", horror.getData(), 136);
   // console.log(m1.getDataMovie());
   // console.log(m2.getDataMovie());

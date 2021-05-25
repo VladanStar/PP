@@ -1,11 +1,11 @@
 (function () {
   console.log("Hi, This is BIT Movie Festival and show mast go on!!!");
   // Kreiramo konstruktor za Zanr.
-  function sleep(delay) {
-    var start = new Date().getTime();
-    while (new Date().getTime() < start + delay);
-  };
-  sleep(3000);
+  // function sleep(delay) {
+  //   var start = new Date().getTime();
+  //   while (new Date().getTime() < start + delay);
+  // };
+  // sleep(3000);
 
   function Genre(name) {
     this.name = name;

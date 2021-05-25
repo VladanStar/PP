@@ -196,9 +196,18 @@
       );
     };
   }
+  function createdFlight(relation, date){
+    return new Flight(relation, date);
+  }
+  function createdPassenger(firstName, lastName, seatNumber, category) {
+    var person = new Person(firstName, lastName);
+    var seat = new Seat(seatNumber, category);
+    return new Passenger(person, seat);
+  }
 
   //////////////////////////////////////////////////////////////////////////////////////////
   //Create Person//
+  var passengerEight = createdPassenger("Boris", "Jovkovic", 4, "e");
 
   var personTwoInfo = new Person("Stevan", "Stasic");
   var personInfo = new Person("Vladan", "Cupric");
@@ -228,26 +237,31 @@
   );
 
   //Create Flight//
-  var bgParis = new Flight("Belgrade Paris", "May 21 2021");
-  bgParis.addPassenger(passengerOne);
-  bgParis.addPassenger(passengerTwo);
+  try {
+    var bgParis = new Flight("Belgrade Paris", "May 21 2021");
+    bgParis.addPassenger(passengerOne);
+    bgParis.addPassenger(passengerTwo);
+    bgParis.addPassenger(passengerEight);
 
-  var barcelonaBelgrade = new Flight("Barcelona Belgrade", "May 31 2021");
-  barcelonaBelgrade.addPassenger(passengerThree);
-  barcelonaBelgrade.addPassenger(passengerFour);
+    var barcelonaBelgrade = new Flight("Barcelona Belgrade", "May 31 2021");
+    barcelonaBelgrade.addPassenger(passengerThree);
+    barcelonaBelgrade.addPassenger(passengerFour);
 
-  var bgLondon = new Flight("Belgrade London", "October 15 2021");
-  bgLondon.addPassenger(passengerFive);
+    var bgLondon = new Flight("Belgrade London", "October 15 2021");
+    bgLondon.addPassenger(passengerFive);
 
-  //bgLondon.removePassenger("John Snow");
-  bgLondon.addPassenger(
-    new Passenger(new Person("Cersei", "Lannister"), new Seat())
-  );
+    //bgLondon.removePassenger("John Snow");
+    bgLondon.addPassenger(
+      new Passenger(new Person("Cersei", "Lannister"), new Seat())
+    );
 
-  // Create Airport//
-  var aeroplane = new Airport("Nikola Tesla");
-  aeroplane.addFlight(bgParis);
-  aeroplane.addFlight(barcelonaBelgrade);
-  aeroplane.addFlight(bgLondon);
-  console.log(aeroplane.getData());
+    // Create Airport//
+    var aeroplane = new Airport("Nikola Tesla");
+    aeroplane.addFlight(bgParis);
+    aeroplane.addFlight(barcelonaBelgrade);
+    aeroplane.addFlight(bgLondon);
+    console.log(aeroplane.getData());
+  }catch(error){
+    console.log("Error message" +error.message );
+  }
 })();

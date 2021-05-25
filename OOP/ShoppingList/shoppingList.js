@@ -1,94 +1,106 @@
 "use strict";
-
 (function () {
-
+  /****  Constructor functions  ****/
 
   function Product(name, price, expirationDate) {
-    this.product_id = Math.floor(Math.random() * 100000);
+    var randomNumb = function () {
+      return Math.floor(10000 + Math.random() * 89999);
+    };
     this.name = name;
-    this.price = parseFloat(price.toFixed(2));
+    this.price = price;
     this.expirationDate = new Date(expirationDate);
-
+    this.id = randomNumb();
     this.getInfo = function () {
-      return (
-        (this.name[0] + this.name[name.length - 1]).toUpperCase() +
-        this.product_id +
-        ",  " +
-        this.name +
-        ", " +
-        this.price
-      );
+      var nameId =
+        (
+          this.name.slice(0, 1) + this.name.slice(this.name.length - 1)
+        ).toUpperCase() + this.id;
+      return nameId + ", " + this.name + ", " + this.price;
     };
   }
 
   function ShoppingBag() {
-    this.productList = [];
+    this.productsList = [];
 
     this.addProduct = function (product) {
-      var currentDate = new Date();
-
-      if (product.expirationDate.getTime() > currentDate.getTime()) {
-        this.productList.push(product);
+      if (product.expirationDate > new Date()) {
+        this.productsList.push(product);
       }
     };
-
-    this.totalProductPrice = function () {
-      var sum = 0;
-
-      for (var i = 0; i < this.productList.length; i++) {
-        sum += this.productList[i].price;
+    this.averagePrice = function () {
+      var averagePrice = 0;
+      for (var i = 0; i < this.productsList.length; i++) {
+        averagePrice += this.productsList[i].price;
       }
-
-      return sum;
+      return (averagePrice / this.productsList.length).toFixed(3);
     };
-
-    this.averageProductPrice = function () {
-      return (this.totalProductPrice() / this.productList.length).toFixed(3);
+    this.getMostExpensive = function () {
+      var mostExpensive = this.productsList[0].price;
+      var index = 0;
+      for (var i = 0; i < this.productsList.length; i++) {
+        if (mostExpensive < this.productsList[i].price) {
+          mostExpensive = this.productsList[i].price;
+          index = i;
+        }
+      }
+      return this.productsList[index].getInfo();
     };
-
-    this.getMostExpensive = function (arr) {
-      var sortedProductList = this.productList.slice().sort(function (o1, o2) {
-        return o1.price - o2.price;
-      });
-      var lastElement = this.productList.length - 1;
-
-      return sortedProductList[lastElement].getInfo();
+    this.calculateTotalPrice = function () {
+      var total = 0;
+      for (var i = 0; i < this.productsList.length; i++) {
+        total += this.productsList[i].price;
+      }
+      return total;
     };
   }
 
-  function PaymentCard(accountBalance, status, expireDate) {
-    this.accountBalance = parseFloat(accountBalance.toFixed(2));
+  function PaymentCard(balance, status, validUntil) {
+    this.balance = balance.toFixed(2);
     this.status = status;
-    this.expireDate = new Date(expireDate);
+    this.validUntil = new Date(validUntil);
   }
 
-  function checkoutAndBuy(shoppingBag, paymentCard) {
-    if (paymentCard.accountBalance >= shoppingBag.totalProductPrice()) {
-      return "The purchase is successful!";
+  var checkoutAndBuy = function (bag, card) {
+    var bagPrice = bag.calculateTotalPrice();
+    var cardBalance = parseFloat(card.balance);
+
+    if (cardBalance > bagPrice) {
+      return "Purchase is completed succesfully!";
+    } else {
+      return (
+        (bagPrice - cardBalance).toFixed(2) +
+        "$ is missing to complete the purchase!"
+      );
     }
+  };
 
-    return (
-      "You don't have enough money!\nThe amount that is missing to complete purchase: " +
-      Math.abs(
-        paymentCard.accountBalance - shoppingBag.totalProductPrice()
-      ).toFixed(2)
-    );
-  }
+  /****  Functions for creating products, shooping bags and payment cards  ****/
 
-  var banana = new Product("Banana", 12.536, "2019-05-11");
-  var apple = new Product("Apple", 7.7894, "2018-09-20");
-  var cheese = new Product("Cheese", 231.7894, "2017-12-23");
-  var milk = new Product("Milk", 101.4568, "2018-04-08");
+  var createProduct = function (name, price, expirationDate) {
+    return new Product(name, price, expirationDate);
+  };
 
-  var bag = new ShoppingBag();
-  bag.addProduct(banana);
-  bag.addProduct(apple);
-  bag.addProduct(cheese);
-  bag.addProduct(milk);
+  var createShoppingBag = function () {
+    return new ShoppingBag();
+  };
 
-  var card1 = new PaymentCard(150.25, "active", "2020-05-11");
-  var card2 = new PaymentCard(50.25, "active", "2020-05-11");
+  var createPaymentCard = function (balance, status, validUntil) {
+    return new PaymentCard(balance, status, validUntil);
+  };
 
-  console.log(checkoutAndBuy(bag, card1));
-  console.log(checkoutAndBuy(bag, card2));
+  var firstProduct = createProduct("Bananas", 130.25, "05.26.2020");
+  var secondProduct = createProduct("Apples", 110.15, "04.21.2020");
+  var thirdProduct = createProduct("Oranges", 150.25, "04.23.2020");
+
+  var firstBag = createShoppingBag();
+
+  var firstCard = createPaymentCard(150, "active", "04/01/20");
+
+  firstBag.addProduct(firstProduct);
+  firstBag.addProduct(secondProduct);
+  firstBag.addProduct(thirdProduct);
+
+  var checkout = checkoutAndBuy(firstBag, firstCard);
+
+  console.log(checkout);
 })();

@@ -10,7 +10,7 @@ name, price (with 2 decimal places), expiration date
 input parameters)
 Add getInfo method to Product. It should return a formatted string containing product code
 (the first and last letter of the name together with the product id), name and price.
-&quot;Banana&quot; -&gt; BA32784, Banana, 129.31
+"Banana" -> BA32784, Banana, 129.31
 Add addProduct method to ShoppingBag. It should receive a Product and add it to the
 product list. You can add a product to the list only if it has a valid expiration date.
 Add a method to ShoppingBag that calculates the average product price of products in your

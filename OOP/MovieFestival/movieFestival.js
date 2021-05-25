@@ -121,8 +121,8 @@
 
   // console.log(program1.getData());
 
-  var festival1 = new Festival("Weekend Festival");
-  var festival2 = new Festival("Weekend Festival");
+  var festival1 = new Festival("BIT Weekend Festival");
+  var festival2 = new Festival("Small Weekend Festival");
   festival1.programFestival(program1.getData());
   festival1.programFestival(program2.getData());
   console.log(festival1.getDataFestival());

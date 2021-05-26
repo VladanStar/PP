@@ -21,9 +21,9 @@
 
   function ShoppingBag() {
     this.productsList = [];
-
+    this.date = new Date();
     this.addProduct = function (product) {
-      if (product.expirationDate > new Date()) {
+      if (product.expirationDate >= new Date()) {
         this.productsList.push(product);
       }
     };

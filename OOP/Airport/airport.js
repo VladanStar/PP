@@ -21,7 +21,7 @@
     if (typeof number === "number" && number !== undefined) {
       this.number = number;
     } else {
-      this.number = Math.floor( 91 * Math.random()+10);
+      this.number = Math.floor(91 * Math.random() + 10);
     }
 
     if (category !== undefined) {
@@ -43,7 +43,7 @@
     this.getData = function () {
       return "\t\t" + this.seat.getData() + ", " + this.person.getData();
     };
-  };
+  }
 
   ////////////////// FLIGHT //////////////////
 
@@ -101,7 +101,6 @@
 
     //  }
     this.relationShort = function (relation) {
-    
       var result1 = "";
       var result2 = "";
 
@@ -122,7 +121,6 @@
           relation[0][i] !== "u"
         ) {
           result1 = relation[0][0] + relation[0][i].toUpperCase();
-        
         }
       }
       for (var i = relation[1].length - 1; i > 0; i--) {
@@ -138,7 +136,7 @@
         }
       }
 
-      return customDate + " "+ result1 + " - " + result2;
+      return customDate + " " + result1 + " - " + result2;
     };
 
     this.getData = function () {
@@ -196,7 +194,7 @@
       );
     };
   }
-  function createdFlight(relation, date){
+  function createdFlight(relation, date) {
     return new Flight(relation, date);
   }
   function createdPassenger(firstName, lastName, seatNumber, category) {
@@ -261,7 +259,7 @@
     aeroplane.addFlight(barcelonaBelgrade);
     aeroplane.addFlight(bgLondon);
     console.log(aeroplane.getData());
-  }catch(error){
-    console.log("Error message" +error.message );
+  } catch (error) {
+    console.log("Error message" + error.message);
   }
 })();

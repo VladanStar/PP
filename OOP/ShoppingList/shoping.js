@@ -4,7 +4,7 @@
 
     function Product(name, price, expirationDate) {
       var randomNum = function () {
-        var ranNum = Math.floor((90000 - 10000) * Math.random()) + 10000;
+        var ranNum = Math.floor(10000 + Math.random() * 89999);
         return ranNum;
       };
     this.name = name;
@@ -57,7 +57,7 @@
           index = i;
         }
       }
-      return this.listOfProducts[index].getInfo();
+      return "Most Expensive is product: "+this.listOfProducts[index].getInfo();
     };
     this.totalPrice = function () {
      var total = 0;
@@ -93,7 +93,7 @@
   var expirationDate = new Date("03/10/2022");
   var banana = new Product("Banana", 12.09, expirationDate);
     console.log(banana.getInfo());
-    var ariel = new Product("Ariel", 754.45874, "03/12/2028");
+    var ariel = new Product("Ariel", 54.45874, "03/12/2028");
 
     console.log(ariel.getInfo());
 
@@ -105,5 +105,4 @@
      var kartica = new PaymentCard(500, "active", "04/01/2028");
 
       console.log(checkOutAndBay(firstBag, kartica));
-
 })();

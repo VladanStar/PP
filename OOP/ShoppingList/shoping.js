@@ -66,9 +66,7 @@
       }
       return total;
       };
-      
     }
-    
     /////////////// PAYMENT CARD  ////////////
     function PaymentCard(balance, status, validUntil) {
         this.balance = balance.toFixed(2);
@@ -94,13 +92,15 @@
   var banana = new Product("Banana", 12.09, expirationDate);
     console.log(banana.getInfo());
     var ariel = new Product("Ariel", 54.45874, "03/12/2028");
-
-    console.log(ariel.getInfo());
+  console.log(ariel.getInfo());
+  var kafaC = new Product("Kafa C", 1.90, "03/10/2024");
+  console.log(kafaC.getInfo());
 
     var firstBag = new ShoppingBag();
     var firstCard = new PaymentCard(600,"active","04/01/2028")
     firstBag.addProduct(banana);
-    firstBag.addProduct(ariel);
+  firstBag.addProduct(ariel);
+  firstBag.addProduct(kafaC);
     console.log(firstBag.getMostExpensive());
      var kartica = new PaymentCard(500, "active", "04/01/2028");
 

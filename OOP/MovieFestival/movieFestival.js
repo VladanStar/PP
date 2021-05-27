@@ -1,7 +1,6 @@
 (function () {
   console.log("Hi, This is BIT Movie Festival and show mast go on!!!");
   //Kreiramo konstruktor za Zanr.
- 
 
   function Genre(name) {
     this.name = name;
@@ -33,58 +32,59 @@
     this.totalNumberOfMovies = 0;
 
     this.addMovie = function (movie) {
-      this.moviesList.push(movie);
+      var lengthAllMovies = 0;
+      this.moviesList.forEach(function (movie) {
+        lengthAllMovies += parseFloat(movie.length);
+      });
+
+      if (lengthAllMovies > 480) {
+        console.log(
+          "Problem. Length All Movies is so long then 480 min. This is no posibile."
+        );
+      } else {
+        this.moviesList.push(movie);
+      }
     };
-  
-   
-  this.getNumOfMovies = function () {
-    return this.moviesList.length;
-  };
-  this.programLength = function () {
-    var length = 0;
-    for (var i = 0; i < this.moviesList.length; i++) {
-      var movie = this.moviesList[i];
-      length += movie.length;
-    }
-    return length;
-  };
-  this.getData = function () {
-    var myDate = this.date;
-    var dayProgram = "\t";
-    // DNEVNI PROGRAM DAN,MESEC,GODINA SA UKUPNOM DUZINOM POZIVAMO METODU DUZINA FILMA
-    dayProgram +=
-      this.date.getDate() +
-      "." +
-      this.date.getMonth() +
-      "." +
-      this.date.getYear() +
-      "," +
-      " program length from " +
-      this.programLength() +
-      " min  from all movies \n";
-    for (var i = 0; i < this.moviesList.length; i++) {
-      var movie = this.moviesList[i];
-      dayProgram += "\t\t\t" + movie.getDataMovie() + "\n";
-    }
-    return dayProgram;
-  };
-  // this.durationMovie = function () {
-  //     var duration = 0;
-  //     for (var m = 0; m < this.ListOfMovies.length; m++) {
-  //         duration += this.ListOfMovies[i].legnth;
-  //     }
-  //     return duration;
-  // }
-}
-  
-  
+
+    this.getNumOfMovies = function () {
+      return this.moviesList.length;
+    };
+    this.programLength = function () {
+      var length = 0;
+      for (var i = 0; i < this.moviesList.length; i++) {
+        var movie = this.moviesList[i];
+        length += movie.length;
+      }
+      return length;
+    };
+    this.getData = function () {
+      var myDate = this.date;
+      var dayProgram = "\t";
+      // DNEVNI PROGRAM DAN,MESEC,GODINA SA UKUPNOM DUZINOM POZIVAMO METODU DUZINA FILMA
+      dayProgram +=
+        this.date.getDate() +
+        "." +
+        this.date.getMonth() +
+        "." +
+        this.date.getYear() +
+        "," +
+        " program length from " +
+        this.programLength() +
+        " min  from all movies \n";
+      for (var i = 0; i < this.moviesList.length; i++) {
+        var movie = this.moviesList[i];
+        dayProgram += "\t\t\t" + movie.getDataMovie() + "\n";
+      }
+      return dayProgram;
+    };
+  }
 
   // Kreiramo konstruktor za festival
 
   function Festival(nameFestival) {
     this.nameFestival = nameFestival;
     this.programs = [];
-  
+
     this.programFestival = function (program1) {
       return this.programs.push(program1);
     };
@@ -111,7 +111,7 @@
   var drama = new Genre("Drama");
   var horror = new Genre("Horror");
   var vestern = new Genre("Western");
-  var action = new Genre("Action")
+  var action = new Genre("Action");
   // console.log(g1.getData());
   // console.log(g2.getData());
 
@@ -141,7 +141,7 @@
   program2.addMovie(movie4);
   program1.addMovie(movie4);
   program2.addMovie(movie5);
-   program1.addMovie(movie4);
+  program1.addMovie(movie4);
 
   // console.log(program1.getData());
 
@@ -154,7 +154,7 @@
 
   console.log(festival2.getDataFestival());
 
-  console.log("SECOND WAY!!!!!!")
+  console.log("SECOND WAY!!!!!!");
   //  FUNCTION CRETATE
   function createMovie(title, genre, length) {
     //var gnr = new Genre(genre);

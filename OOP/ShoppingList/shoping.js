@@ -58,7 +58,7 @@
         }
       }
       return (
-        "Most Expensive is product: " + this.listOfProducts[index].getInfo()
+        "Most Expensive is product: " + this.listOfProducts[index].getInfo();
       );
     };
     this.totalPrice = function () {

@@ -37,7 +37,7 @@
         lengthAllMovies += parseFloat(movie.length);
       });
 
-      if (lengthAllMovies > 480) {
+      if ((lengthAllMovies + movie.length) > 480) {
         console.log(
           "Problem. Length All Movies is so long then 480 min. This is no posibile."
         );
@@ -139,9 +139,9 @@
   program2.addMovie(movie3);
   program2.addMovie(movie2);
   program2.addMovie(movie4);
-  program1.addMovie(movie4);
-  program2.addMovie(movie5);
-  program1.addMovie(movie4);
+   program1.addMovie(movie4);
+   program2.addMovie(movie5);
+  // program1.addMovie(movie4);
 
   // console.log(program1.getData());
 

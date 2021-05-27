@@ -1,11 +1,7 @@
 (function () {
   console.log("Hi, This is BIT Movie Festival and show mast go on!!!");
-  // Kreiramo konstruktor za Zanr.
-  // function sleep(delay) {
-  //   var start = new Date().getTime();
-  //   while (new Date().getTime() < start + delay);
-  // };
-  // sleep(3000);
+   //Kreiramo konstruktor za Zanr.
+ 
 
   function Genre(name) {
     this.name = name;
@@ -34,14 +30,13 @@
   function Program(date) {
     this.date = date;
     this.moviesList = [];
+     this.totalNumberOfMovies = 0;
 
     this.addMovie = function (movie) {
-      if (this.moviesList.length < 8) {
-        this.moviesList.push(movie);
-      } else {
-        console.log("Movies List is Full");
-      }
+      this.moviesList.push(movie);
+       this.totalNumberOfMovies++;
     };
+   
     this.getNumOfMovies = function () {
       return this.moviesList.length;
     };
@@ -80,7 +75,7 @@
   function Festival(nameFestival) {
     this.nameFestival = nameFestival;
     this.programs = [];
-    // this.totalNumOfMovies = totalNumOfMovies;
+  
     this.programFestival = function (program1) {
       return this.programs.push(program1);
     };
@@ -106,6 +101,8 @@
   /***KREIRAMO INSTANCU ZANRA UBACUJEMO ARGUMENT IMENA ***/
   var drama = new Genre("Drama");
   var horror = new Genre("Horror");
+  var vestern = new Genre("Western");
+  var action = new Genre("Action")
   // console.log(g1.getData());
   // console.log(g2.getData());
 
@@ -114,6 +111,11 @@
   var movie2 = new Movie("Shuter island", drama.getData(), 130);
   var movie3 = new Movie(" The Shining", horror.getData(), 146);
   var movie4 = new Movie("Rosemary's Baby", horror.getData(), 136);
+  var movie5 = new Movie(
+    "The Good, the Bad and the Ugly",
+    vestern.getData(),
+    177
+  );
   // console.log(m1.getDataMovie());
   // console.log(m2.getDataMovie());
 
@@ -128,6 +130,9 @@
   program2.addMovie(movie3);
   program2.addMovie(movie2);
   program2.addMovie(movie4);
+  program1.addMovie(movie4);
+  program2.addMovie(movie5);
+   program1.addMovie(movie4);
 
   // console.log(program1.getData());
 
@@ -139,4 +144,31 @@
   console.log(festival1.getDataFestival());
 
   console.log(festival2.getDataFestival());
+
+  console.log("SECOND WAY!!!!!!")
+  //  FUNCTION CRETATE
+  function createMovie(title, genre, length) {
+    //var gnr = new Genre(genre);
+    return new Movie(title, genre, length);
+  }
+
+  function createProgram(date) {
+    return new Program(date);
+  }
+
+  var firstMovie = createMovie("Sparta", "action", 115);
+  var secondMovie = createMovie("Taxi driver", "drama", 120);
+  var thirdMovie = createMovie("Birds", "horror", 124);
+
+  var firstProgram = createProgram(new Date(2021, 5, 22));
+  var secondProgram = createProgram(new Date(2021, 5, 22));
+
+  firstProgram.addMovie(firstMovie);
+  firstProgram.addMovie(secondMovie);
+  secondProgram.addMovie(thirdMovie);
+
+  var filmFest = new Festival("FilmFest may  2021");
+  filmFest.programFestival(firstProgram.getData());
+  filmFest.programFestival(secondProgram.getData());
+  console.log(filmFest.getDataFestival());
 })();

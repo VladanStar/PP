@@ -36,7 +36,11 @@
     this.moviesList = [];
 
     this.addMovie = function (movie) {
-      this.moviesList.push(movie);
+      if (this.moviesList.length < 8) {
+        this.moviesList.push(movie);
+      } else {
+        console.log("Movies List is Full");
+      }
     };
     this.getNumOfMovies = function () {
       return this.moviesList.length;
@@ -121,7 +125,7 @@
   program1.addMovie(movie1);
   program1.addMovie(movie2);
   program1.addMovie(movie3);
-  program2.addMovie(movie1);
+  program2.addMovie(movie3);
   program2.addMovie(movie2);
   program2.addMovie(movie4);
 
@@ -131,8 +135,8 @@
   var festival2 = new Festival("Small Weekend Festival");
   festival1.programFestival(program1.getData());
   festival2.programFestival(program2.getData());
-   sleep(3000);
+
   console.log(festival1.getDataFestival());
-  sleep(4000);
+
   console.log(festival2.getDataFestival());
 })();

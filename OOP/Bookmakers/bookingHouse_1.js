@@ -1,5 +1,4 @@
 (function () {
-
   console.log("Hello Players World!!! The GAME BEGINN!!!!!");
   // Country - name, odds, continent (EU, AS, AF, SA, NA, AU)
   // Create continents as constants (objects that can not change). So, when passing a continent as a parameter, you should pass Continent.ASIA.
@@ -15,11 +14,11 @@
   //Pravimo objecat koji ima samo konstante
   var continents = {
     ASIA: "AS",
-      EUROPE: "EU",
-      AFRICA: "AF",
-      SOUTH_AMERICA: "SA",
-      NORT_AMERICA: "NA",
-    AUSTRALIA:"AU"
+    EUROPE: "EU",
+    AFRICA: "AF",
+    SOUTH_AMERICA: "SA",
+    NORT_AMERICA: "NA",
+    AUSTRALIA: "AU",
   };
 
   // Person - name, surname, date of birth
@@ -146,7 +145,8 @@
         ", " +
         this.listOfBettingPlaces.length +
         " betting places " +
-        this.numberOfPlayers + " number of players";
+        this.numberOfPlayers +
+        " number of players";
 
       var secondLine = "";
 
@@ -182,8 +182,16 @@
   // console.log(nemanja.getData());
 
   //Pravimo instancu dve adrese;
-  var address = new Address("Generala Birjukova 2", "11070 Novi Beograd", serbia);
-  var address1 = new Address("Bate Zivojinovica Valtera 2341/9", " 102600 Beijing", china);
+  var address = new Address(
+    "Generala Birjukova 2",
+    "11070 Novi Beograd",
+    serbia
+  );
+  var address1 = new Address(
+    "Bate Zivojinovica Valtera 2341/9",
+    " 102600 Beijing",
+    china
+  );
   address.fullAddress(serbia);
   address1.fullAddress(china);
 
@@ -214,18 +222,21 @@
 
   console.log("SECOND WAY WITH CREATE FUNCTION!!!!");
   function createPlayer(person, betamount, country) {
-    
     return new Player(person, betamount, country);
   }
 
   function createBettingPlace(address) {
     return new BettingPlace(address);
   }
-  var vicentije = new Player(new Person("Vicentije","Vicentijevic","1973-12-12"),23490,china);
-  var zoom = new createBettingPlace(new Address("Gornja Polovina","levo od nigde", serbia));
+  var vicentije = new Player(
+    new Person("Vicentije", "Vicentijevic", "1973-12-12"),
+    23490,
+    china
+  );
+  var zoom = new createBettingPlace(
+    new Address("Gornja Polovina", "levo od nigde", serbia)
+  );
   zoom.addPlayer(vicentije);
   betHouse.addBettingPlace(zoom);
   console.log(betHouse.getData());
-
-
 })();

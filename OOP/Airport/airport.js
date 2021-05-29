@@ -121,6 +121,7 @@
           relation[0][i] !== "u"
         ) {
           result1 = relation[0][0] + relation[0][i].toUpperCase();
+          break;
         }
       }
       for (var i = relation[1].length - 1; i > 0; i--) {

@@ -11,7 +11,6 @@
       var result = firstLetter + lastLetter;
       return result.toUpperCase();
     };
-    
   }
 
   // Kreiramo konstruktor Movie
@@ -32,21 +31,6 @@
     this.moviesList = [];
     this.totalNumberOfMovies = 0;
 
-    // this.addMovie = function (movie) {
-    //   var lengthAllMovies = 0;
-     
-    //   this.moviesList.forEach(function (movie) {
-    //     lengthAllMovies += parseFloat(movie.length);
-    //   });
-        
-    //   if ((lengthAllMovies) > 480) {
-    //     console.log(
-    //       "Problem. Length All Movies is so long then 480 min. This is no posibile."
-    //     );
-    //   } else {
-    //     this.moviesList.push(movie);
-    //   }
-    // };
     this.countOfGenre = function (movie) {
       var count = 0;
       this.moviesList.forEach(function (element) {
@@ -63,26 +47,34 @@
         sumOfMinutes += item.length;
       });
       return sumOfMinutes;
-    }
+    };
     this.addMovie = function (movie) {
       if (!movie || !(movie instanceof Movie)) {
         console.log("Invalid input!!!");
         return;
       }
-  
+
       if (this.countOfGenre(movie) >= 4) {
-        console.log("there is already maximum movies of that genre! Movie " + movie.title + " not added to ");
+        console.log(
+          "there is already maximum movies of that genre! Movie " +
+            movie.title +
+            " not added to "
+        );
         return;
       }
       var allMovieLength = this.lengthOfAllMovie() / 60;
       var movieInHours = movie.length / 60;
       if (allMovieLength + movieInHours > 8) {
-        console.log("Length of program exceeds 8 hours! Movie " + movie.title + " not added to program");
+        console.log(
+          "Length of program exceeds 8 hours! Movie " +
+            movie.title +
+            " not added to program"
+        );
         return;
       }
       this.moviesList.push(movie);
     };
-  
+
     this.getNumOfMovies = function () {
       return this.moviesList.length;
     };
@@ -104,7 +96,10 @@
         this.date.getMonth() +
         "." +
         this.date.getYear() +
-        "," +
+        "," 
+        +
+         " today is " +this.getNumOfMovies() + " movies "+
+        
         " program length from " +
         this.programLength() +
         " min  from all movies \n";
@@ -115,17 +110,15 @@
       return dayProgram;
     };
   }
-  
 
   // Kreiramo konstruktor za festival
 
   function Festival(nameFestival) {
-  this.nameFestival = nameFestival;
-  this.programs = [];
-
-  this.programFestival = function (program1) {
-    return this.programs.push(program1);
-  };
+    this.nameFestival = nameFestival;
+    this.programs = [];
+    this.programFestival = function (program1) {
+      return this.programs.push(program1);
+    };
 
     // IME FESTIVALA I UKUPAN BROJ FILMOVA
     this.getDataFestival = function () {
@@ -134,14 +127,14 @@
       var firstFinal =
         nameFestival +
         " has  movie titles " +
-        this.programFestival() +
+        this.programFestival()+
         " movies \n";
 
       var result = "";
-      for (var i = 0; i < this.programs.length - 1; i++) {
+      for (var i = 0; i < this.programs.length -1; i++) {
         result += "\t" + this.programs[i];
       }
-      final = firstFinal + result;
+      final = firstFinal + result ;
       return final;
     };
   }
@@ -178,8 +171,8 @@
   program2.addMovie(movie3);
   program2.addMovie(movie2);
   program2.addMovie(movie4);
-   program1.addMovie(movie4);
-   program2.addMovie(movie5);
+  program1.addMovie(movie4);
+  program2.addMovie(movie5);
   // program1.addMovie(movie4);
   // program2.addMovie(movie4);
   // program2.addMovie(movie4);
@@ -212,7 +205,7 @@
   var thirdMovie = createMovie("Birds", "horror", 124);
 
   var firstProgram = createProgram(new Date(2021, 5, 22));
-  var secondProgram = createProgram(new Date(2021, 5, 22));
+  var secondProgram = createProgram(new Date(2021, 5, 27));
 
   firstProgram.addMovie(firstMovie);
   firstProgram.addMovie(secondMovie);

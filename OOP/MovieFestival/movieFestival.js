@@ -161,7 +161,7 @@
   // console.log(m2.getDataMovie());
 
   /*** KREIRAMO INSTANCU PROGRAMA UBACUJEM DATUM U FORMI YYYY, M, DD ***/
-  var program1 = new Program(new Date(2021, 5, 22));
+  var program1 = new Program(new Date(2021, 5, 24));
   var program2 = new Program(new Date(2021, 5, 23));
 
   /** U PROGRAMU POZIVAMO METODU addMovie SA ARGUMENTOM KOJI PROSLEDUJE FILM ***/

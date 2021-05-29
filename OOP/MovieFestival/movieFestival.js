@@ -27,7 +27,7 @@
   // Kreiramo konstrutor za Program
 
   function Program(date) {
-    this.date = date;
+    this.date = new Date(date);
     this.moviesList = [];
     this.totalNumberOfMovies = 0;
 
@@ -90,13 +90,11 @@
       var myDate = this.date;
       var dayProgram = "\t";
       // DNEVNI PROGRAM DAN,MESEC,GODINA SA UKUPNOM DUZINOM POZIVAMO METODU DUZINA FILMA
+      var year = this.date.getFullYear();
+      var month = this.date.getMonth() + 1;
+      var day = this.date.getDate();
       dayProgram +=
-        this.date.getDate() +
-        "." +
-        this.date.getMonth() +
-        "." +
-        this.date.getYear() +
-        "," 
+       year +  "."+ month +"." + day 
         +
          " today is " +this.getNumOfMovies() + " movies "+
         
@@ -161,8 +159,8 @@
   // console.log(m2.getDataMovie());
 
   /*** KREIRAMO INSTANCU PROGRAMA UBACUJEM DATUM U FORMI YYYY, M, DD ***/
-  var program1 = new Program(new Date(2021, 5, 24));
-  var program2 = new Program(new Date(2021, 5, 23));
+  var program1 = new Program("2021 May 23");
+  var program2 = new Program("2021 October 3");
 
   /** U PROGRAMU POZIVAMO METODU addMovie SA ARGUMENTOM KOJI PROSLEDUJE FILM ***/
   program1.addMovie(movie1);
@@ -204,8 +202,8 @@
   var secondMovie = createMovie("Taxi driver", "drama", 120);
   var thirdMovie = createMovie("Birds", "horror", 124);
 
-  var firstProgram = createProgram(new Date(2021, 5, 22));
-  var secondProgram = createProgram(new Date(2021, 5, 27));
+  var firstProgram = createProgram("2021 May 22");
+  var secondProgram = createProgram("2021 July 27");
 
   firstProgram.addMovie(firstMovie);
   firstProgram.addMovie(secondMovie);

@@ -211,4 +211,21 @@
   betHouse.addBettingPlace(betPlace);
   betHouse.addBettingPlace(betPlace1);
   console.log(betHouse.getData());
+
+  console.log("SECOND WAY WITH CREATE FUNCTION!!!!");
+  function createPlayer(person, betamount, country) {
+    
+    return new Player(person, betamount, country);
+  }
+
+  function createBettingPlace(address) {
+    return new BettingPlace(address);
+  }
+  var vicentije = new Player(new Person("Vicentije","Vicentijevic","1973-12-12"),23490,china);
+  var zoom = new createBettingPlace(new Address("Gornja Polovina","levo od nigde", serbia));
+  zoom.addPlayer(vicentije);
+  betHouse.addBettingPlace(zoom);
+  console.log(betHouse.getData());
+
+
 })();

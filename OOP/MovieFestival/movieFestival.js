@@ -18,6 +18,11 @@
   function Movie(title, genre, length) {
     this.title = title;
     this.genre = genre;
+    if (typeof length != "number") {
+      console.log(
+        "Error. the length of the film must be in minutes by numbers"
+      );
+    }
     this.length = length;
     // PRAVIMO NAZIV FILMA SA ZANROM I DUZINOM
     this.getDataMovie = function () {
@@ -94,10 +99,14 @@
       var month = this.date.getMonth() + 1;
       var day = this.date.getDate();
       dayProgram +=
-       year +  "."+ month +"." + day 
-        +
-         " today is " +this.getNumOfMovies() + " movies "+
-        
+        year +
+        "." +
+        month +
+        "." +
+        day +
+        " today is " +
+        this.getNumOfMovies() +
+        " movies " +
         " program length from " +
         this.programLength() +
         " min  from all movies \n";
@@ -125,14 +134,14 @@
       var firstFinal =
         nameFestival +
         " has  movie titles " +
-        this.programFestival()+
+        this.programFestival() +
         " movies \n";
 
       var result = "";
-      for (var i = 0; i < this.programs.length -1; i++) {
+      for (var i = 0; i < this.programs.length - 1; i++) {
         result += "\t" + this.programs[i];
       }
-      final = firstFinal + result ;
+      final = firstFinal + result;
       return final;
     };
   }
@@ -190,7 +199,6 @@
   console.log("SECOND WAY!!!!!!");
   //  FUNCTION CRETATE
   function createMovie(title, genre, length) {
-    //var gnr = new Genre(genre);
     return new Movie(title, genre, length);
   }
 

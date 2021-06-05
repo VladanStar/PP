@@ -14,16 +14,24 @@ function Employee(name, surname, job, salary) {
   this.job = job;
   this.salary = salary;
 }
+Employee.prototype = Object.create(Employee.prototype);
+Employee.prototype.constructor = Employee;
 
 function Developer(name, surname, job, salary, specialization) {
   Employee.call(this, name, surname, job, salary);
   this.specialization = specialization;
 }
+Developer.prototype = Object.create(Employee.prototype);
+
+//Assigning the value to a constructor property
+Developer.prototype.constructor = Developer;
 
 function Manager(name, surname, job, salary, department) {
   Employee.call(this, name, surname, job, salary);
   this.department = department;
 }
+Manager.prototype = Object.create(Employee.prototype);
+Manager.prototype.constructor = Manager;
 
 //All objects created from Developer Constructor will share the same method
 Developer.prototype.getSpecialization = function () {
@@ -58,12 +66,6 @@ Employee.prototype.increaseSalary = function () {
 };
 
 //Creating object with prototype Employee.prototype
-Developer.prototype = Object.create(Employee.prototype);
-Manager.prototype = Object.create(Employee.prototype);
-
-//Assigning the value to a constructor property
-Developer.prototype.constructor = Developer;
-Manager.prototype.constructor = Manager;
 
 var employee1 = new Employee("Vladan", "Cupric", "programer", 1000);
 

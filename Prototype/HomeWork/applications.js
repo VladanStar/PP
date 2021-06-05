@@ -34,7 +34,6 @@ MobileApp.prototype.forAndroid=function(){
     }
     return false;
 }
-
 Object.prototype.isCCLicence=function(){
     if(this.licence==="CC"){
         this.stars++;

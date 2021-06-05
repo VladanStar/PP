@@ -76,4 +76,3 @@ var manager1 = new Manager("Stefan", "Kostov", "manager", 2000, "sales");
 console.log(manager1.getSalary());
 console.log(manager1.increaseSalary());
 console.log(manager1.getData());
-console.log(Manager.prototype);

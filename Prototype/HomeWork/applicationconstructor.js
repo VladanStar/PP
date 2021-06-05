@@ -1,5 +1,20 @@
 'use strict';
+class App {
+    constructor() {
+        
+    }
+    isCCLicence() {
+        if (this.licence === "CC") {
+            this.stars++;
+            return true;
+        }
+        return false;
+    }
+    showStars() {
+        return this.stars;
+    }
 
+}
 class WebApp {
     constructor(name, url, technologies, licence, stars) {
         this.name = name;
@@ -20,10 +35,9 @@ class WebApp {
         }
     }
 };
-class MobileApp{
-    
+class MobileApp extends App{
     constructor(name, platforms, licence, stars) {
-        
+        super();
         this.name = name;
         this.platforms = platforms;
         this.licence = licence;
@@ -48,7 +62,7 @@ class MobileApp{
     }
 
 }
-O
+
 var firstWebApp = new WebApp(
   "GoogleMaps",
   "www.googlemaps.com",
@@ -58,5 +72,5 @@ var firstWebApp = new WebApp(
 );
 var firstMobileApp = new MobileApp("BitApp", "Android", "CC", 5);
 console.log(firstMobileApp.platforms);
-//console.log(firstMobileApp.isCCLicence());
-//console.log(firstMobileApp.showStars());
+console.log(firstMobileApp.isCCLicence());
+console.log(firstMobileApp.showStars());

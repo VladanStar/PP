@@ -1,0 +1,44 @@
+body {
+    margin: 2% 10% 6% 10%;
+    font-size: 1em;
+    background-color: lightblue;
+}
+h1 {
+    text-align: center;
+    font-size: 2em;
+    padding: 10px;
+}
+h3 {
+    padding: 10px;
+    font-size: 1.5em;
+}
+h4 {
+    font-size: 1.5em;
+    padding: 10px;
+}
+form {
+    padding: 10px;
+    margin: 1%;
+}
+label {
+    padding: 5px;
+    text-align: left;
+}
+input {
+    padding: 10px;
+}
+select {
+    background-color: rgb(243, 232, 232);
+    margin: 0 auto;
+    padding: 10px;
+}
+#all-movie-length {
+    padding: 10px;
+    text-align: right;
+}
+#error {
+    color: red;
+    font-size: 0.8em;
+    text-align: center;
+    margin: 1%;
+}

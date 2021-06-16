@@ -59,6 +59,6 @@ Program.prototype.getData = function () {
     this.getTotalMovies() +
     " movies, duration: " +
     this.lengthOfAllMovie() +
-    " min";
+    ", min";
   return resultStr;
 };

@@ -18,15 +18,16 @@ h1 {
   margin: auto;
   border: 5px solid rgb(170, 30, 30);
   padding: 20px;
+  box-shadow: 8px 5px aliceblue;
 }
 .wrapper p {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    text-shadow: teal;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: teal;
 }
 #second {
-    text-align: left;
+  text-align: left;
 }
 
 label,
@@ -52,11 +53,12 @@ input {
   color: white;
   font-weight: bold;
 }
-#movie-list, #program-list {
-    color: rgb(76, 7, 202);
-    font-size: 20px;
-    font-weight: bold;
-    background-color: floralwhite;
+#movie-list,
+#program-list {
+  color: rgb(76, 7, 202);
+  font-size: 20px;
+  font-weight: bold;
+  background-color: floralwhite;
 }
 .button {
   width: 100%;

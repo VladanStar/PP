@@ -82,7 +82,8 @@ ul {
 }
 
 form {
-  border: 1px solid rgb(170, 30, 30);
+  border: 2px dashed rgb(170, 30, 30);
   width: 100%;
   padding: 20px;
+  border-radius: 5%;
 }

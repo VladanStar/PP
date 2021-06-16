@@ -1,16 +1,29 @@
 /* Bordered form */
+
+
+.background {
+    color:whitesmoke;
+    background-image: url(https://rs.n1info.com/wp-content/uploads/2021/03/VEC_0804-01-1024x683-1.jpeg);
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.8;
+
+}
 form {
-    border: 3px solid #f1f1f1;
+    border: 3px solid rgb(170, 30, 30);
+    height: 100%;
     
   }
-  
+  label {
+      font-size: 24px;
+  }
   /* Full-width inputs */
   input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(170, 30, 30);
     box-sizing: border-box;
   }
   
@@ -24,12 +37,7 @@ form {
     cursor: pointer;
     width: 100%;
   }
-  body {
-      color:whitesmoke;
-      background-image: url(https://rs.n1info.com/wp-content/uploads/2021/03/VEC_0804-01-1024x683-1.jpeg);
-      background-attachment: fixed;
-      background-size: cover;
-  }
+ 
   
   /* Add a hover effect for buttons */
   button:hover {
@@ -53,7 +61,9 @@ form {
   img.avatar {
     width: 20%;
     border-radius: 50%;
+    box-shadow: 10px 10px 10px whitesmoke;
   }
+ 
   
   /* Add padding to containers */
   .container {
@@ -64,6 +74,7 @@ form {
   span.psw {
     float: right;
     padding-top: 16px;
+    color: darkslateblue;
   }
   
   

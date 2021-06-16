@@ -8,15 +8,15 @@ document
 document.querySelector("#addmovietop").addEventListener("click", addMovie);
 
 function createMovie() {
-  var movieTitleInput = document.querySelector("#title").nodeValue;
+  var movieTitleInput = document.querySelector("#title").value;
   var movieTitle = movieTitleInput.value;
 
   var movieLengthInput = document.querySelector("#length").value;
   var movieLength = movieLengthInput.value;
 
-  var movieGenereSelect = document.querySelector("#genere-select");
-  var movieGenereIndex = movieGenereSelect.selectedIndex;
-  var movieGenere = movieGenereSelect.options[movieGenereIndex].value;
+  var movieGenreSelect = document.querySelector("#genre-select");
+  var movieGenrIndex = movieGenreSelect.selectedIndex;
+  var movieGenre = movieGenreSelect.options[movieGenreIndex].value;
 
   var error = {
     OK: "OK",
@@ -32,30 +32,27 @@ function createMovie() {
       if (isNaN(mLength) || mLength < 0) {
         return error.INSERT_LENGTH;
       } else {
-        if (movieGenere == "-") {
+        if (movieGenre == "-") {
           return error.SELECT_GENRE;
         }
       }
     }
     return error.OK;
   }
-  var errorStatus = validation(movieTitleInput, movieLengthInput, movieGenere);
+  const errorStatus = validation(movieTitleInput, movieLengthInput, movieGenre);
+  if (errorStatus !== error.OK) {
+      document.querySelector('#error').innerHTML = `<p>${errorStatus}</p>`;
+  }
+
+
+  const movie = new Movie(movieTitleInput, movieLengthInput, movieGenre);
   allMovies.push(movie);
 
   movieTitleInput = document.querySelector("#title").value;
-  movieLengthInput = document.querySelector("#length");
-  movieGenre = document.querySelector("#genre-select");
+  movieLengthInput = document.querySelector("#length") =null;
+  movieGenre = document.querySelector("#genre-select") = "-";
 
-  var listItem = document.createElement("li");
-  var liText = document.createTextNode(movie.getInfo());
-  listItem.appendChild(liText);
-  var listOfM = document.querySelector("#movie-list");
-  listOfM.appendChild(listItem);
-  var movieOption = document.createElement("option");
-  var movieOptionContent = document.createTextNode(movie.getInfo());
-  movieOption.appendChild(movieOptionContent);
-  var optOfMovies = document.querySelector("#movie-select");
-  optOfMovies.appendChild(movieOption);
+ 
 
   var listItem = document.createElement("li");
   var liText = document.createTextNode(movie.getInfo());

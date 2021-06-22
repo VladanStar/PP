@@ -1,111 +1,48 @@
-var subjList = ["WEB", "JavaScript", "SPA"];
-var createdSubjectList = [];
-var studentList = [];
-var examList = [];
-var passedList = [];
-var failedList = [];
 
+var addButton = document.querySelector('.add-btn');
+var arrOfStudents = [];
+var arrPassed = [];
+var arrFailed = [];
 
-var chosenSubjectInput = document.querySelector("#choose-subject");
-var gradeInput = document.querySelector(".grade-input");
-var nameSurnameInput = document.querySelector(".name-input");
+addButton.addEventListener('click', function (event) {
 
-function createSubject(subjName) {
-    subjList.forEach(function (subjName, index) {
-        var subjOption = document.createElement("option");
-        subjOption.value = index;
-        subjOption.textContent = subjName;
-        chosenSubjectInput.appendChild(subjOption);
-        var createdSubject = new Subject(subjName);
-        createdSubjectList.push(createdSubject);
-    })
-}
+    // pokupiti podatke
 
-function createStudent() {
-    var grade = gradeInput.value;
-    var nameSurname = nameSurnameInput.value;
-    var nameSurnameSplit = nameSurname.split(" ");
-    var name = nameSurnameSplit[0];
-    var surname = nameSurnameSplit[1];
+    var data = getFormData();
+    console.log(data.select);
 
-    surname = surname || "InsertSurname";
+    var name = nameInput(data.inputNameSurname);
+    var surname = surnameInput(data.inputNameSurname);
+    
+    // validirati podatke
+    validator(data);
 
-    validateData(name, surname, grade);
+    // napraviti objekte
+    var student = new Student(name, surname);
+    var subject = new Subject (data.select);
+    var exam = new Exam (subject, student, data.inputGrade);
 
-    var createdStudent = new Student(name, surname);
-    studentList.push(createdStudent);
+    arrOfStudents.push(exam);
+    if (exam.hasPassed() == true) {      // TODO
+        arrPassed.push(exam);
+        var p = document.createElement('p');
+        var text = document.createTextNode(exam.student.getStudentData() + ' ' + exam.grade);
+        p.appendChild(text);
+        document.getElementById('passed').appendChild(p);
+    }else{
+        arrFailed.push(exam);
+        console.log(arrFailed);
+        var p = document.createElement('p');
+        var text = document.createTextNode(exam.student.getStudentData() + ' ' + exam.grade);
+        p.appendChild(text);
+        document.getElementById('failed').appendChild(p);
 
-    nameSurnameInput.value = "";
-}
-
-function createExam() {
-    var subjIndex = document.querySelector("#choose-subject").value;
-    var chosenSubject = createdSubjectList[subjIndex];
-
-    var createdStudent = {};
-    var grade = gradeInput.value;
-
-    studentList.forEach(function (student) {
-        createdStudent = student;
-    });
-
-    var createdExam = new Exam(chosenSubject, createdStudent, grade);
-    examList.push(createdExam);
-
-    if (createdExam.hasPassed()) {
-        passedList.push(createdExam);
-    } else {
-        failedList.push(createdExam);
     }
-
-    gradeInput.value = "";
-}
-
-function update() {
-    updateList(examList);
-    updateStatistics(passedList, failedList, examList);
-}
-
-function getCurrentMonth() {
-    var currentDate = new Date;
-    var monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-    var currentMonth = monthArray[currentDate.getMonth()];
-    return currentMonth;
-}
-
-function updateCurrentMonth() {
-    var statDate = document.querySelector("#statistic-date");
-    statDate.textContent = getCurrentMonth();
-}
-
-function resetList(li) {
-    var ul = document.querySelector("#passed-student-list");
-    ul.removeChild(li);
-}
-
-var xButton = document.querySelector(".btn-x");
-
-updateCurrentMonth();
-createSubject();
-
-var addButton = document.querySelector("#add-button");
-addButton.addEventListener("click", function () {
-
-    createStudent();
-    createExam();
-    update();
+    console.log(arrPassed.length);
+    document.getElementsByClassName("exam-failed-percentage")[0].innerHTML = Math.floor(arrFailed.length/(arrPassed.length + arrFailed.length)*100) + '%';
+    document.getElementsByClassName("exam-passed-count")[0].innerHTML = arrPassed.length;
+    document.querySelector('.add-student-name').value = '';
+    document.querySelector('.add-grade').value = '';
+    failed.innerHTML = arrFailed.length;    
+    passed.inerHTML = arrPassed.length;
 });
-
-var studentsLists = document.querySelector(".students-lists");
-
-studentsLists.addEventListener("click", function (event) {
-    if (event.target.className === "btn-x") {
-        var liElement = event.target.parentElement.parentElement;
-        resetList(liElement);
-    }
-})
-
-
-
-

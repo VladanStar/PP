@@ -1,0 +1,92 @@
+.students-lists {
+    width: 80%;
+    margin: 60px auto;
+    #passed-list{
+        float: left;
+        width:40%;
+    }
+    #failed-list{
+        float:right;
+        width: 40%;
+        margin-right:10px;
+    }
+    h5{
+        font-size: 20px;
+        font-weight: 100;
+    }
+    #passed-list-title {
+        color: gray;
+    }
+    #failed-list-title {
+        color: $failed-color;
+    }
+    li{
+        list-style-type: none;
+        padding-left: 0;
+        color: gray;
+        font-size: 18px;
+        border-bottom: 1px solid #e7e7e7;
+        padding: 15px;
+    }
+    .span-li{
+        float: left;
+    }
+    .span-container {
+        float: right;
+    }
+    .grade-span {
+        float: left;
+    }
+    .btn-x {
+        font-size: 18px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        line-height: 1;
+    }
+    
+    .btn-x:focus {
+         outline: none; 
+    }
+
+    li:first-child { 
+        border-top: 1px solid #e7e7e7;
+     }
+    li:nth-child(even) {
+         background-color: #f7f7f7; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+    .passed-span {
+        color: $passed-color;
+    }
+    .failed-span{
+        color: $failed-color;
+    }
+}

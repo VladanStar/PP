@@ -1,0 +1,21 @@
+.cf::before,
+.cf::after{
+    content: "";
+    display: table;
+}
+.cf::after{
+    clear:both;
+}
+body{
+    margin:0;
+    padding: 0;
+    
+    h1,h3, h5, p{
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    p{
+        margin: 0;
+    }
+    
+}

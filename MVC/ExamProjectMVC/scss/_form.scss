@@ -1,0 +1,59 @@
+
+#form {
+    border-bottom: 1px solid lightgray;
+    height: 150px;
+    form{
+        margin: 20px auto;
+        height: 60px;
+        width: 70%;
+        select,button, .input-div {
+            display: block;
+            float: left;
+            margin-right: 15px;
+        
+        }
+        select {
+            color: #444;
+            font-size: 18px;
+            width: 100px;
+            border-color: lightgray;
+            height: 45px;
+        }
+        input{
+            box-sizing: border-box;
+            padding: 0;
+            color: gray; 
+            padding-left: 10px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            height: 45px;
+           
+        }
+        .name-input{
+         width: 400px;
+        }
+        .grade-input{
+            width: 90px;
+        }
+        #add-button{
+            margin-right:0;
+            border: none;
+            background: transparent;
+            font-size: 35px;
+            color: $passed-color;
+            height: 45px;
+        }
+        .validation {
+            color: red;
+        }
+        .nameValidation {
+           margin-top: 5px;
+        }
+        .gradeValidation{
+            margin-top: 5px;
+            position: absolute;
+            width: 250px;
+        }
+    }
+}
+

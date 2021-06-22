@@ -1,0 +1,54 @@
+header{
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url(http://exam-statistics-example.bitballoon.com/img/back.png);
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    h1{
+        position: relative;
+        top: 20px;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        font-size: 30px;
+    }
+    h3{
+        color: white;
+        text-align: center;
+        font-weight: 50;
+        font-size: 24px;
+        letter-spacing: 3px;
+        margin-bottom: 30px;
+    }
+    .final-count{
+        width: 40%;
+        height: 40px;
+        margin: 10px  auto;
+        p{
+            color: #444;
+            font-size: 15px;
+            line-height: 45px;
+            float: left;
+            padding-left: 10px;
+        }
+        .count{
+            float: right;
+            width: 20%;
+        }
+        #passed-count,
+        #failed-count,
+        #failed-percent{
+            color: white;
+        }
+    }
+    #passed{
+        background-color: $passed-color;
+    }
+    #failed{
+        background-color: $failed-color;
+    }
+
+}

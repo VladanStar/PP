@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exam Statistics</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 offset-4 text-center">
+                    <h1>Exam Statistic June</h1>
+                    <p id="passed">Passed <span id="passnum">2</span> <span id="passprc">50%</span></p>
+                    <p id="failed" >Faield <span id="failednum">2</span> <span id="faieldprc">50%</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                   <select  data-toggle="dropdown" class="btn btn-default dropdown-toggle subject" name="" id="">
+                       <option value="">Web Progamiranje</option>
+                       <option value="">Objektno Orijentisano Programiranje</option>
+                   </select>
+            </div>
+            <div class="col-4">
+                <input type="text" name="name" placeholder="Name Surname" class='form-control'>
+            </div>
+            <div class="col-4">
+                    <select data-toggle="dropdown" class="btn btn-default dropdown-toggle grade" name="" id="">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10</option>
+                    </select>
+                    <button class="btn btn-primary">ADD</button>
+             </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                    <div class="alert alert-success text-center passed" role="alert">
+                          Passed
+                          <li>Nikola</li>
+                          </div>
+            </div>
+            <div class="col-6">
+                    <div class="alert alert-danger text-center failed" role="alert">
+                           Failed
+                           <li>Djole</li>
+                          </div>
+            </div>
+        </div>
+
+      
+    </div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./js/subject.js"></script> 
+<script type="text/javascript" src="./js/student.js"></script> 
+<script type="text/javascript" src="./js/exam.js"></script> 
+
+</body>
+</html>

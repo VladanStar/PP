@@ -1,0 +1,43 @@
+.subject{
+  float:right;
+  border: 1px solid  lightgray;
+}
+
+.grade{
+    border:1px solid lightgrey;
+}
+
+#passed{
+  background: green;
+  border-radius:3px;
+  padding: 10px;
+  color:white;
+
+}
+#failed{
+    background: red;
+    border-radius:3px;
+    padding: 10px;
+    color:white;
+  
+  }
+
+#faieldprc{
+    background: #ff4d4d;
+    border-radius:3px;
+    padding: 5px;
+    color:white;
+}
+#passprc{
+    background: #009900;
+    border-radius:3px;
+    padding: 5px;
+    color:white;
+}
+
+.passed{
+    margin-top:50px;
+}
+.failed{
+    margin-top:50px;
+}

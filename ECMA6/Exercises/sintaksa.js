@@ -10,14 +10,9 @@ let capitalizeFirstLetter = (...arguments) => {
 
         newArray[i] = element.charAt(0).toUpperCase() + element.slice(1);
     })
-
     console.log(newArray);
-
 }
-
 capitalizeFirstLetter('hello', 'there', 'ES', 6);
-
-
 
 
 // 2. Write a function that calculates sale tax that should be paid for the product of the given price.

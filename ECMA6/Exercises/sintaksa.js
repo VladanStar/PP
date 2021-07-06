@@ -58,7 +58,7 @@ console.log([parseInt(productsWithTax[0].tax),parseInt(productsWithTax[1].tax)])
 	Input: [4, 6, 11, -9, 2.1], 2
     Output: [6, 8, 13, -7, 4.1]*/
 
-function inc(array, n = 1) {
+const inc = (array, n = 1)  => {
     let newArr = [];
 
     array.forEach((item) => {
@@ -89,9 +89,9 @@ console.log(filterEven);
 
 
 const array = ['compiler', 'transpiler', 'babel.js', 'JS standard', 'linter'];
-const filerString = array.filter(el => el.toLowerCase().includes("js"));
-
+const filerString = array.filter(el => el.includes("js") || el.includes("JS"));
 console.log(filerString);
+
 
 
 
@@ -121,24 +121,42 @@ console.log(a);
 
 
 
+/* task 8. Write a function that returns indexes of the elements greater than 10. 
+    Input: [1.6, 11.34, 29.23, 7, 3.11, 18]
+    Output: 1, 2, 5*/
 
-// 8. Write a function that checks if the given array is an array of positive integer values.
+const filterGreater = (arr)  => {
+    let newArray = [];
+    arr.forEach((item, index) => {
+        if (item > 10) {
+            newArray += arr.indexOf(item);
+        }
+
+    });
+    return newArray.split('') + ' ';
+}
+console.log(filterGreater([1.6, 11.34, 29.23, 7, 3.11, 18]));
+
+// 9. Write a function that checks if the given array is an array of positive integer values.
 //     Input: [3, 11, 9, 5, 6]
 //     Output: yes
 //     Input: [3, -12, 4, 11]
 //     Output: no
 
 
-const array = [3, 11, -9, 5, 6]
 const checkPositive = (arr) => {
-    arr.every(e => e >= 0)
-    return 'yes'
-} 
 
-console.log(checkPositive(array));
+    let b = arr.every((args) => args > 0)
+    if (b == true) {
+        return 'yes';
+    }
+    return 'no';
+}
+console.log(checkPositive([3, 11, 9, 5, 6]));
+console.log(checkPositive([3, -12, 4, 11]));
 
 
-// 9. Write a function that calculates the product of the elements of the array.
+// 10. Write a function that calculates the product of the elements of the array.
 //     Input: [2, 8, 3]
 //     Output: 48
 
@@ -151,7 +169,7 @@ console.log(product);
 
 
 
-// 10. Write a function that calculates the maximum of the given array.
+// 11. Write a function that calculates the maximum of the given array.
 //     Input: [2, 7, 3, 8, 5.4]
 //     Output: 8
 

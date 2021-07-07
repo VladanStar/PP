@@ -243,8 +243,8 @@ console.log(isPositive([3, -12, 4, 11]));
 ("use strict");
 
 let productOfAll = (a) => {
-  let product = a.reduce((accumulator, currentValue) => {
-    return accumulator * currentValue;
+  let product = a.reduce((rez, val) => {
+    return rez * val;
   }, 1);
 
   return product;

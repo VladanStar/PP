@@ -8,7 +8,7 @@ document
 document.querySelector("#addmovietop").addEventListener("click", addMovie);
 
 function createMovie() {
-  var movieTitleInput = document.querySelector("#title").nodeValue;
+  var movieTitleInput = document.querySelector("#title").value;
   var movieTitle = movieTitleInput.value;
 
   var movieLengthInput = document.querySelector("#length").value;
@@ -24,7 +24,7 @@ function createMovie() {
     INSERT_LENGTH: "Please check the movie length",
     SELECT_GENRE: "Please select the movie genre",
   };
-  function validation(movieTitleInput, movieLengthInput) {
+  function validation(movieTitleInput, movieLengthInput, movieGenere) {
     var mLength = parseInt(movieLengthInput);
     if (movieTitleInput == "") {
       return error.INSERT_TITLE;
@@ -40,22 +40,15 @@ function createMovie() {
     return error.OK;
   }
   var errorStatus = validation(movieTitleInput, movieLengthInput, movieGenere);
-  allMovies.push(movie);
+    if (errorStatus !== error.OK) {
+      document.querySelector('#error').innerHTML = <p>errorStatus</p>
+    }
+    var movie = new Movie(movieTitleInput, movieLengthInput, movieGenere);
+    allMovies.push(movie);
 
-  movieTitleInput = document.querySelector("#title").value;
-  movieLengthInput = document.querySelector("#length");
-  movieGenre = document.querySelector("#genre-select");
-
-  var listItem = document.createElement("li");
-  var liText = document.createTextNode(movie.getInfo());
-  listItem.appendChild(liText);
-  var listOfM = document.querySelector("#movie-list");
-  listOfM.appendChild(listItem);
-  var movieOption = document.createElement("option");
-  var movieOptionContent = document.createTextNode(movie.getInfo());
-  movieOption.appendChild(movieOptionContent);
-  var optOfMovies = document.querySelector("#movie-select");
-  optOfMovies.appendChild(movieOption);
+  movieTitleInput = document.querySelector("#title").value ="";
+  movieLengthInput = document.querySelector("#length").value = null;
+  movieGenre = document.querySelector("#genere-select").value = "-";
 
   var listItem = document.createElement("li");
   var liText = document.createTextNode(movie.getInfo());
@@ -76,7 +69,7 @@ function createMovie() {
     totaLL.textContent = allMoviesLength;
     document.querySelector(
       "#all-movie-length"
-    ).innerHTML = `${allMoviesLength} min`;
+    ).innerHTML = allMoviesLength  +'min';
   }
 }
 

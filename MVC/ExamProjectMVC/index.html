@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="./css/examStatistic.css">
+    <title>Exam statistics</title>
+</head>
+
+<body>
+
+    <div class="top">
+        <div class="exam">
+            <div class="exam-title">
+                Exam statistic
+                <span class="exam-title-month">June</span>
+            </div>
+
+            <div class="exam-total">Total students: %count%</div>
+
+            <div class="exam-passed clearfix">
+                <div class="exam-passed-text">passed</div>
+                <div class="right">
+                    <div class="exam-passed-count">0</div>
+                    <div class="exam-passed-percentage">&nbsp;</div>
+                </div>
+            </div>
+
+            <div class="exam-failed clearfix">
+                <div class="exam-failed-text">failed</div>
+                <div class="right clearfix">
+                    <div class="exam-failed-count">0</div>
+                    <div class="exam-failed-percentage">50%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="add">
+            <div class="add-container">
+                <select class="add-subject">
+                    <option value="web" selected>Web</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="spa">SPA</option>
+                </select>
+                <input type="text" class="add-student-name" placeholder="Name surname">
+                <input type="number" class="add-grade" min="5" max="10" placeholder="Grade">
+                <button class="add-btn">ADD</i>
+                </button>
+                <span id="output1"></span>
+                <span id="output2"></span>
+            </div>
+        </div>
+
+        <div class="container clearfix">
+            <div class="passed">
+                <h2 class="passed-title">passed</h2>
+
+                <div class="passed-list" id="passed">
+
+                    <!-- <div class="item clearfix" id="passed-0">
+                        <div class="item-description">Roger Federer</div>
+                        <div class="right clearfix">
+                            <div class="item-value">10</div>
+                            <div class="item-delete">
+                                <button class="item-delete-btn">x</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>-->
+
+                </div>
+            </div>
+
+            <div class="failed">
+                <h2 class="failed-title">failed</h2>
+
+                <div class="failed-list" id="failed">
+
+                    <!-- <div class="item clearfix" id="failed-0">
+                        <div class="item-description">John Doe</div>
+                        <div class="right clearfix">
+                            <div class="item-value">5</div>
+                            <div class="item-delete">
+                                <button class="item-delete-btn">x</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./js/subject.js"></script>
+    <script src="./js/student.js"></script>
+    <script src="./js/exam.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
